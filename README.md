@@ -9,6 +9,8 @@ This library is still heavily in development.
 - It's completely dependency free.
 - It's small!
 
+## Logic
+When the database is "started", it loads the chainfile into memory. Every change to the chainfile will be saved to a json file. 
 
 ## Roadmap
 Here follows a list of things that still need to be implemented:
