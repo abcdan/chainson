@@ -1,3 +1,5 @@
+// Import chainson
 const Chainson = require('../lib/index')
 
-const chain = Chainson('test', 'test')
+// Define the chain, this will use the default variables
+const chain = new Chainson()
