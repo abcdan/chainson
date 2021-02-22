@@ -1,7 +1,7 @@
 # Ignoring compiled code
 node_modules
 /lib
-
+/.vscode
 # Logs
 logs
 *.log
