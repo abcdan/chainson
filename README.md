@@ -14,9 +14,12 @@ When the database is "started", it loads the chainfile into memory. Every change
 
 ## Roadmap
 Here follows a list of things that still need to be implemented:
-- [ ] Check if chainfile already exists
+- [x] Check if chainfile already exists
 - [ ] Check if chainfile is writable
 - [ ] Check if chainfile is readable
+- [ ] Automatic repairing of a chainfile
+- [ ] Automatic restoring of an older chainfile
+- [ ] Automatic merging of older and newer chainfile (if new one not fully functional)
 - [ ] Add to chain
 - [ ] Check if exists in chain
 - [ ] Remove from chain
