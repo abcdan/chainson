@@ -32,24 +32,16 @@ class Chainson {
   }
 
   private async checkChainExists() {
-    try {
-      this.log('Checking if file exists', 'VERBOSE')
-      await fs.access(this.fileLocation, fs.constants.R_OK)
-    } catch(ignored) {
-      this.log('Couldn\'t access file', 'VERBOSE')
-      throw new NoFileError()
-    } finally {
-      this.log('Done checking if file exists', 'VERBOSE')
-    }
+    return fs.existsSync(this.fileLocation)
   }
 
+  
+
   private async createFile() {
-    try {
-      await this.checkChainExists()
-    } catch (ignored) {
+    const fileExists = await this.checkChainExists()
+    if(!fileExists) {
       await fs.promises.writeFile(this.fileLocation, createChainfile(global.version))
     }
-    
   }
 }
 
