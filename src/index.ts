@@ -51,7 +51,7 @@ class Chainson {
    * Get the value from the chain
    * @param key key
    */
-  public get(key: any): any {
+  public get(key: string): any {
     if (!this.chain) throw new NoChainLoaded();
     return this.chain.chain.get(key);
   }
@@ -59,7 +59,7 @@ class Chainson {
   /**
    * Returns the full chain as a map
    */
-  public full(): Map<any, any> {
+  public full(): Map<string, any> {
     if (!this.chain) throw new NoChainLoaded();
     return this.chain.chain
     

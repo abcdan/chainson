@@ -2,7 +2,7 @@ export interface Chainfile {
   // What version of chainson the chain uses (for possible future compatability issues)
   version: string;
   // The chain itself, containing all data
-  chain: Map<any, any>;
+  chain: Map<string, any>;
   // The timestamp the chain got created
   createdAt?: Date;
   //  The timestamp the chain was last updated

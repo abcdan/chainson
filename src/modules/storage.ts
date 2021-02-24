@@ -26,7 +26,7 @@ export function loadFromDisk(chainLocation: string): Chainfile {
  */
 function jsonToMap(chain: object) {
   // TODO: Optimize for speed
-  const tempChain = new Map<any, any>()
+  const tempChain = new Map<string, any>()
   for (const [key, value] of Object.entries(chain)) {
     tempChain.set(key, value)
   }
@@ -62,6 +62,6 @@ export function storeToDisk(chainLocation: string, chainfile: Chainfile): Promis
  * @see https://gist.github.com/lukehorvat/133e2293ba6ae96a35ba#gistcomment-2624332
  * @param map map that needs to be converted
  */
-function mapToObject(map: Map<any, any>) {
+function mapToObject(map: Map<string, any>) {
   return Array.from(map.entries()).reduce((main, [key, value]) => ({...main, [key]: value}), {})
 }
