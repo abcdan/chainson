@@ -35,3 +35,22 @@ function jsonToMap(chainJson: object) {
   }
   return resultMap;
 }
+
+/**
+ * Safely write the file the chain to the disk
+ * Do not call this function outside of the queue without a proper reason.
+ * @param chainLocation chainfile location
+ * @param chainfile chainfile contents
+ */
+export function storeToDisk(chainLocation: string, chainfile: Chainfile): Promise<boolean> {
+  const chainJson = JSON.stringify(chainfile);
+  return new Promise((resolve, reject) => {
+    fs.writeFile(chainLocation, chainJson, (err) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(true);
+      }
+    });
+  });
+}

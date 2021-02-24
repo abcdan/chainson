@@ -1,4 +1,4 @@
-import { global } from '../configs/global';
+import { general } from '../configs/general';
 import { Chainfile } from '../models/chainfile';
 /**
  * Creates the default chain file if there isn't a file containing the chainfile format
@@ -7,7 +7,7 @@ import { Chainfile } from '../models/chainfile';
  */
 function createChainfile(): string {
   const chainfile = {
-    version: global.version,
+    version: general.version,
     createdAt: new Date(),
     updatedAt: new Date(),
     chain: new Map().set('success', true),

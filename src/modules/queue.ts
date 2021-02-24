@@ -1,6 +1,6 @@
 import * as EventEmitter from 'events';
-import * as fs from 'fs';
 import { Chainfile } from '../models/chainfile';
+import { storeToDisk } from './storage';
 
 // TODO: Add a way to temporarily block the node thread to ensure everything
 //       gets written to the file itself. Or make a smart way of removing the
@@ -32,20 +32,15 @@ export class ChainQueue extends EventEmitter {
    */
   async store() {
     while (!this.paused && this.chainQueue.length) {
-      const buf = this.chainQueue.shift();
-      const chainJson = JSON.stringify(buf);
-      try {
-        await fs.writeFile(this.chainLocation, chainJson, (err) => {
-          if (err) {
-            this.err(err);
-          } else {
-            // TODO: Move on to the next one
-            this.store();
-          }
+      const chainfile = this.chainQueue.shift();
+      if (!chainfile) return;
+      storeToDisk(this.chainLocation, chainfile)
+        .then((res) => {
+          this.store();
+        })
+        .catch((err) => {
+          this.err(err);
         });
-      } catch (e) {
-        this.err(e);
-      }
     }
   }
 
