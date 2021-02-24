@@ -1,7 +1,24 @@
 # chainson
+![npm](https://img.shields.io/npm/v/chainson)
+![npm](https://img.shields.io/npm/dw/chainson)
+![GitHub last commit](https://img.shields.io/github/last-commit/abcdan/chainson)
+![NPM](https://img.shields.io/npm/l/chainson)
+
 A JSON file-based database with a queuing system
 ```
 This library is still heavily in development.
+```
+
+## Installing
+It's pretty easy cause we're on NPM! Simply run the following command to install the library as a dependency. We **do not** recommend installing it globally to ensure you use the right version in your projects.
+### NPM - Node Package Manager
+```cli
+npm i chainson
+```
+
+### Yarn 
+```
+yarn add chainson
 ```
 
 ## Why create a library like this?
