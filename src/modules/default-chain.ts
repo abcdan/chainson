@@ -5,11 +5,12 @@ import { Chainfile } from '../models/chainfile';
  * It has parameters to fill in the blanks (yes, they are called blank.) of the chainfile.
  * @param version the chainson version
  */
-function createChainfile(version: string): string {
+function createChainfile(): string {
   const chainfile = {
     version: global.version,
     createdAt: new Date(),
     updatedAt: new Date(),
+    chain: new Map().set('success', true),
   } as Chainfile;
 
   return JSON.stringify(chainfile);

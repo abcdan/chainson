@@ -9,10 +9,10 @@ import { createFile } from './storage';
  * Runs checks related to the chainfile itself. Ensuring it can be created/edited/read
  * @param chainLocation chainfile location
  */
-export async function runValidateChecks(chainLocation: string) {
-  const exists = await checkChainExists(chainLocation);
+export function runValidateChecks(chainLocation: string) {
+  const exists = checkChainExists(chainLocation);
   if (!exists) {
-    await createFile(chainLocation);
+    createFile(chainLocation);
   }
 }
 
@@ -20,6 +20,6 @@ export async function runValidateChecks(chainLocation: string) {
  * Check if the chainfile exists on the disk
  * @param chainLocation chainfile location
  */
-async function checkChainExists(chainLocation: string) {
+function checkChainExists(chainLocation: string) {
   return fs.existsSync(chainLocation);
 }

@@ -1,6 +1,6 @@
 {
   "name": "chainson",
-  "version": "0.0.3-a",
+  "version": "0.0.4-a",
   "description": "A JSON file-based database with a queuing system",
   "main": "index.js",
   "types": "main.d.ts",
@@ -10,7 +10,8 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
     "docs": "npx typedoc src/",
-    "prepare-for-release": "npm run format && npm run lint && npm run docs && npm run build"
+    "fix": "npm run format && npm run lint && npm run build",
+    "prepare-for-release": "npm run fix && npm run docs"
   },
   "repository": {
     "type": "git",

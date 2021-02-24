@@ -32,6 +32,9 @@ We all have worked on an application that, for example, needed a simple settings
 
 That's why I'm working on a library to simply `store` and `retrieve` data without having to set up anything or having to think about security.
 
+## Isn't this basically storing a map to JSON and vice verca?
+Kinda, yes! But it'll be able to do much more than just storing and retrieving data. Besides that, it's a lot of fun for me learning new things while working on a project that I'm actually planning on using myself in the future.
+
 ## Why use it?
 - It's **easy to use**. Everything you need is already included by default with Node.js.
 - It's completely dependency free.
@@ -44,6 +47,9 @@ When the database is "started", it loads the chainfile into memory. Every change
 Here follows a list of things that still need to be implemented:
 - [x] Check if chainfile already exists
 - [x] Create chainfile if none is available
+- [x] Queue for adding, removing, etc. to avoid getting the file corrupt
+- [x] Add to chain
+- [x] Getting from chain
 - [ ] Check if chainfile is writable
 - [ ] Check if chainfile is readable
 - [ ] Loading chainfile into memory
@@ -51,18 +57,18 @@ Here follows a list of things that still need to be implemented:
 - [ ] Automatic repairing of a chainfile
 - [ ] Automatic restoring of an older chainfile
 - [ ] Automatic merging of older and newer chainfile (if new one not fully functional)
-- [ ] Add to chain
 - [ ] Remove from chain
 - [ ] Update in chain
 - [ ] Check if exists in chain
 - [ ] Write a complex parser to add/change/remove specific key/value pairs [example of what I mean](https://stackoverflow.com/questions/62369838/javascript-parse-object-key-value-from-string-keys)
 - [ ] In between editing and saving lock the chain (chainfile.json.lock) with an ID that has to match the process trying to edit it in order to unlock it
-- [ ] Queue for adding, removing, etc. to avoid getting the file corrupt
 - [ ] Optional `Chainhistory` folder with older versions of the chain, can be "every 5 minutes" or "every change" etc.
 - [ ] Robust logging system
 - [ ] Robust error handling
 - [ ] Undo function for recent changes (bottom of chainfile holds last x amount of change)
 - [ ] Have the entire thing be fully asynchronous (except methods appended with Sync for flexibility)
+
+_If something is [x], it doesn't mean that it's working properly. It's just means that it has been implemented. In the future I'm gonna add unit tests and make everything a lot more secure. I first want to build a base to work from._
 
 ## Documentation
 There are a few places to find documentation for the application:
@@ -77,6 +83,8 @@ To ensure everything is formatted and linted, simply run `npm run prepare-for-re
 This ensures everything is consistent across all releases.
 
 If you are contributing to the project ensure you run this command before you open a pull request. There have to be no errors before we're gonna merge your pull request so everything stays consistent.
+
+During development you probably don't want to constantly generate documentation. That's why I've added `npm run fix` to make your life easier during development.
 
 ## Done reading? Check out this joke!
 ![Jokes Card](https://readme-jokes.vercel.app/api)
