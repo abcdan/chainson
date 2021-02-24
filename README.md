@@ -64,6 +64,11 @@ Here follows a list of things that still need to be implemented:
 - [ ] Undo function for recent changes (bottom of chainfile holds last x amount of change)
 - [ ] Have the entire thing be fully asynchronous (except methods appended with Sync for flexibility)
 
+## Documentation
+In the codebase itself there are comments above _almost_ all methods. In the future we'll have an automatic generating documentation page available. If you want to set this up to help speed up the process that's totally possible! I'd love to see a PR for that.
+
+For now refer to the comments in the code itself.
+
 ## How to release a new version or contribute.
 This part of the documention is mainly for myself at the moment (or people who might have release permissions in the future).
 
