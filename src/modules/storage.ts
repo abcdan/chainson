@@ -15,14 +15,14 @@ export async function createFile(chainLocation: string) {
  * @param chainLocation location of the chainfile
  */
 export function loadFromDisk(chainLocation: string): Chainfile {
-  const data = JSON.parse(fs.readFileSync(chainLocation, 'utf8')) as Chainfile;
+  const data = JSON.parse(fs.readFileSync(chainLocation, 'utf8'));
   data.chain = jsonToMap(data.chain);
-  return data;
+  return data as Chainfile;
 }
 
 /**
  * Convert the raw JSON chain into the map that you can work with
- * @tutorial https://stackoverflow.com/a/62198615/6257811
+ * @see https://stackoverflow.com/a/62198615/6257811
  * @param chainJson chain json data
  */
 function jsonToMap(chainJson: object) {
@@ -43,9 +43,13 @@ function jsonToMap(chainJson: object) {
  * @param chainfile chainfile contents
  */
 export function storeToDisk(chainLocation: string, chainfile: Chainfile): Promise<boolean> {
-  const chainJson = JSON.stringify(chainfile);
+  const tempChain = chainfile as any;
+  tempChain.chain = mapToObject(chainfile.chain)
+  const chainJson = JSON.stringify(tempChain)
+  console.log(tempChain)
   return new Promise((resolve, reject) => {
     fs.writeFile(chainLocation, chainJson, (err) => {
+      console.log(chainLocation);
       if (err) {
         reject(err);
       } else {
@@ -53,4 +57,13 @@ export function storeToDisk(chainLocation: string, chainfile: Chainfile): Promis
       }
     });
   });
+}
+
+/**
+ * Converst a map into an object (to store it)
+ * @see https://gist.github.com/lukehorvat/133e2293ba6ae96a35ba#gistcomment-2624332
+ * @param map map that needs to be converted
+ */
+function mapToObject(map: Map<any, any>) {
+  return Array.from(map.entries()).reduce((main, [key, value]) => ({...main, [key]: value}), {})
 }

@@ -20,20 +20,9 @@ class Chainson {
   /**
    * Initializes the database, runs checks and sets everything up.
    */
-  private async init() {
+  private init() {
     runValidateChecks(this.chainLocation);
     this.chain = loadFromDisk(this.chainLocation);
-  }
-
-  /**
-   *
-   * @param message the message that needs to be logged
-   * @param level verbose/normal/crucial
-   */
-  private log(message: string, level = 'VERBOSE') {
-    // TODO: Implement a way to only show errors based on the level
-    // TODO: refactor log('...', 'VERBOSE) to verboseLog
-    // console.log(`${message}`);
   }
 
   /**

@@ -53,8 +53,8 @@ Here follows a list of things that still need to be implemented:
 - [x] Getting from chain
 - [x] Check if chainfile is writable
 - [x] Check if chainfile is readable
-- [ ] Loading chainfile into memory
-- [ ] A store function to save memory to a file
+- [x] Loading chainfile into memory
+- [x] A store function to save memory to a file
 - [ ] Automatic repairing of a chainfile
 - [ ] Automatic restoring of an older chainfile
 - [ ] Automatic merging of older and newer chainfile (if new one not fully functional)
