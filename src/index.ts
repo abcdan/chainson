@@ -1,48 +1,46 @@
-const fs = require('fs')
-import { global } from './configs/global';
-import { NoFileError } from './errors/no-file-error';
-import { createChainfile } from './modules/default-chain';
+import { Chainfile } from './models/chainfile';
+import { ChainQueue } from './modules/queue';
+import { loadFromDisk } from './modules/storage';
+import { runValidateChecks } from './modules/validate-file';
 
 class Chainson {
-  private fileLocation: string
-  private output: string
-  
-  constructor(fileLocation = 'chainfile', output = 'NORMAL') {
-    this.fileLocation = fileLocation + '.json'
-    this.output = output
-    this.init()
+  private chainLocation: string;
+  private output: string;
+  private chainQueue: ChainQueue;
+  private chain: Chainfile | any;
+
+  constructor(chainLocation = 'chainfile', output = 'NORMAL') {
+    this.chainLocation = chainLocation + '.json';
+    this.output = output;
+    this.init();
+    this.chainQueue = new ChainQueue(this.chainLocation);
   }
 
   /**
    * Initializes the database, runs checks and sets everything up.
    */
-  private init(): void {
-    this.createFile()
+  private async init() {
+    await runValidateChecks(this.chainLocation);
+    this.chain = await loadFromDisk(this.chainLocation);
   }
 
   /**
-   * 
+   *
    * @param message the message that needs to be logged
    * @param level verbose/normal/crucial
    */
   private log(message: string, level = 'VERBOSE') {
     // TODO: Implement a way to only show errors based on the level
     // TODO: refactor log('...', 'VERBOSE) to verboseLog
-    console.log(`${message}`)
+    // console.log(`${message}`);
   }
 
-  private async checkChainExists() {
-    return fs.existsSync(this.fileLocation)
-  }
-
-  
-
-  private async createFile() {
-    const fileExists = await this.checkChainExists()
-    if(!fileExists) {
-      await fs.promises.writeFile(this.fileLocation, createChainfile(global.version))
-    }
-  }
+  /**
+   * Add a link to the chain
+   * @param key key
+   * @param value data
+   */
+  // public add(key: string, value: object) {}
 }
 
-export = Chainson
+export = Chainson;

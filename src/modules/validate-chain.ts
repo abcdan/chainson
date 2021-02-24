@@ -5,30 +5,24 @@
 // If nothing can be done to automatically try to heal the file, it should throw an error that will not be catched inside of the library so the developer can implement
 // what to do next themselves.
 
-const data = {
-  // The timestamp the chain got created
-  createdAt: {
-    required: false,
-    type: String
-  },
-  //  The timestamp the chain was last updated
-  updatedAt: {
-    required: true,
-    type: String
-  },
-  // The chain itself, containing all data
-  chain: {
-    required: true,
-    type: Object
-  },
-  // The transactions that happened within the chain for undoing
-  history: {
-    required: false,
-    type: Array
-  },
-  // What version of chainson the chain uses (for possible future compatability issues)
-  version: {
-    required: true,
-    type: String
-  }
+import { Chainfile } from '../models/chainfile';
+
+/**
+ * Validate if the chain is properly created (uses regexes to ensure everything matches the specification)
+ * @param chain chainfile
+ */
+function validateChain(chain: Chainfile) {
+  return true;
+}
+
+/**
+ * Ensures the version of the chainfile is following the correct format (SemVer)
+ * @param version chainfile version
+ */
+function parseVersion(version: string) {
+  const semVerRegex = /^([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+[0-9A-Za-z-]+)?$/;
+  const results = version.match(semVerRegex) ? true : false;
+
+  // TODO: Throw version mismatch error
+  return results;
 }
