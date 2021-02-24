@@ -65,9 +65,9 @@ Here follows a list of things that still need to be implemented:
 - [ ] Have the entire thing be fully asynchronous (except methods appended with Sync for flexibility)
 
 ## Documentation
-In the codebase itself there are comments above _almost_ all methods. In the future we'll have an automatic generating documentation page available. If you want to set this up to help speed up the process that's totally possible! I'd love to see a PR for that.
-
-For now refer to the comments in the code itself.
+There are a few places to find documentation for the application:
+1. In the codebase itself there _should_ be comments on almost every method.
+2. An online version based on these comments can be found on [this](https://abcdan.github.io/chainson/docs/index.html) page.
 
 ## How to release a new version or contribute.
 This part of the documention is mainly for myself at the moment (or people who might have release permissions in the future).

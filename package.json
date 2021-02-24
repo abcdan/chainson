@@ -9,7 +9,8 @@
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
-    "prepare-for-release": "npm run format && npm run lint && npm run build"
+    "docs": "npx typedoc src/",
+    "prepare-for-release": "npm run format && npm run lint && npm run docs && npm run build"
   },
   "repository": {
     "type": "git",
