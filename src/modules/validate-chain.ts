@@ -4,3 +4,31 @@
 // If possible we can also implement a way to automatically merge the two chains based on the differences between them and prefering the newer version over the older one.
 // If nothing can be done to automatically try to heal the file, it should throw an error that will not be catched inside of the library so the developer can implement
 // what to do next themselves.
+
+const data = {
+  // The timestamp the chain got created
+  createdAt: {
+    required: false,
+    type: String
+  },
+  //  The timestamp the chain was last updated
+  updatedAt: {
+    required: true,
+    type: String
+  },
+  // The chain itself, containing all data
+  chain: {
+    required: true,
+    type: Object
+  },
+  // The transactions that happened within the chain for undoing
+  history: {
+    required: false,
+    type: Array
+  },
+  // What version of chainson the chain uses (for possible future compatability issues)
+  version: {
+    required: true,
+    type: String
+  }
+}
