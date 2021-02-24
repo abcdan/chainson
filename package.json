@@ -24,7 +24,7 @@
     "lib/**/*"
   ],
   "author": "abcdan",
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/abcdan/chainson/issues"
   },
