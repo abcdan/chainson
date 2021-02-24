@@ -51,8 +51,8 @@ Here follows a list of things that still need to be implemented:
 - [x] Queue for adding, removing, etc. to avoid getting the file corrupt
 - [x] Add to chain
 - [x] Getting from chain
-- [ ] Check if chainfile is writable
-- [ ] Check if chainfile is readable
+- [x] Check if chainfile is writable
+- [x] Check if chainfile is readable
 - [ ] Loading chainfile into memory
 - [ ] A store function to save memory to a file
 - [ ] Automatic repairing of a chainfile
