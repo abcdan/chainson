@@ -118,16 +118,16 @@
 					<li><input checked="" disabled="" type="checkbox"> Queue for adding, removing, etc. to avoid getting the file corrupt</li>
 					<li><input checked="" disabled="" type="checkbox"> Add to chain</li>
 					<li><input checked="" disabled="" type="checkbox"> Getting from chain</li>
-					<li><input disabled="" type="checkbox"> Check if chainfile is writable</li>
-					<li><input disabled="" type="checkbox"> Check if chainfile is readable</li>
-					<li><input disabled="" type="checkbox"> Loading chainfile into memory</li>
-					<li><input disabled="" type="checkbox"> A store function to save memory to a file</li>
+					<li><input checked="" disabled="" type="checkbox"> Check if chainfile is writable</li>
+					<li><input checked="" disabled="" type="checkbox"> Check if chainfile is readable</li>
+					<li><input checked="" disabled="" type="checkbox"> Loading chainfile into memory</li>
+					<li><input checked="" disabled="" type="checkbox"> A store function to save memory to a file</li>
+					<li><input checked="" disabled="" type="checkbox"> Check if exists in chain</li>
 					<li><input disabled="" type="checkbox"> Automatic repairing of a chainfile</li>
 					<li><input disabled="" type="checkbox"> Automatic restoring of an older chainfile</li>
 					<li><input disabled="" type="checkbox"> Automatic merging of older and newer chainfile (if new one not fully functional)</li>
 					<li><input disabled="" type="checkbox"> Remove from chain</li>
 					<li><input disabled="" type="checkbox"> Update in chain</li>
-					<li><input disabled="" type="checkbox"> Check if exists in chain</li>
 					<li><input disabled="" type="checkbox"> Write a complex parser to add/change/remove specific key/value pairs <a href="https://stackoverflow.com/questions/62369838/javascript-parse-object-key-value-from-string-keys">example of what I mean</a></li>
 					<li><input disabled="" type="checkbox"> In between editing and saving lock the chain (chainfile.json.lock) with an ID that has to match the process trying to edit it in order to unlock it</li>
 					<li><input disabled="" type="checkbox"> Optional <code>Chainhistory</code> folder with older versions of the chain, can be &quot;every 5 minutes&quot; or &quot;every change&quot; etc.</li>
@@ -171,6 +171,12 @@
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/configs_general.html">configs/general</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/errors_chain_link_already_exists.html">errors/chain/link-<wbr>already-<wbr>exists</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/errors_chain_no_link.html">errors/chain/no-<wbr>link</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/errors_chainfile_no_chain_loaded.html">errors/chainfile/no-<wbr>chain-<wbr>loaded</a>

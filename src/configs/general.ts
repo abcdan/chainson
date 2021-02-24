@@ -4,4 +4,3 @@ const general = {
 };
 
 export { general };
-

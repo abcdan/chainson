@@ -8,21 +8,25 @@ import { createFile } from './storage';
  * Runs checks related to the chainfile itself. Ensuring it can be created/edited/read
  * @param chainLocation chainfile location
  */
-export function runValidateChecks(chainLocation: string) {
+export function runValidateChecks(chainLocation: string): void {
   const exists = checkChainExists(chainLocation);
   if (!exists) {
     createFile(chainLocation);
   }
 
+  if (checkFileEmpty(chainLocation)) {
+    createFile(chainLocation);
+  }
+
   checkRead(chainLocation);
-  checkRead(chainLocation);
+  checkWrite(chainLocation);
 }
 
 /**
  * Check if the chainfile exists on the disk
  * @param chainLocation chainfile location
  */
-function checkChainExists(chainLocation: string) {
+function checkChainExists(chainLocation: string): boolean {
   return fs.existsSync(chainLocation);
 }
 
@@ -50,4 +54,14 @@ function checkWrite(chainLocation: string): boolean {
     }
   });
   return true;
+}
+
+/**
+ * Check if the chainfile is empty, if empty enter default
+ * @param chainLocation chainfile location
+ */
+function checkFileEmpty(chainLocation: string): boolean {
+  // TODO: Make an option to turn this off and throw an error
+  const stats = fs.statSync(chainLocation);
+  return stats.size === 0;
 }
