@@ -1,3 +1,4 @@
+import { NoChainLoaded } from './errors/chainfile/no-chain-loaded';
 import { Chainfile } from './models/chainfile';
 import { ChainQueue } from './modules/queue';
 import { loadFromDisk } from './modules/storage';
@@ -7,7 +8,7 @@ class Chainson {
   private chainLocation: string;
   private output: string;
   private chainQueue: ChainQueue;
-  private chain: Chainfile | any;
+  private chain: Chainfile | undefined;
 
   constructor(chainLocation = 'chainfile', output = 'NORMAL') {
     this.chainLocation = chainLocation + '.json';
@@ -20,8 +21,8 @@ class Chainson {
    * Initializes the database, runs checks and sets everything up.
    */
   private async init() {
-    await runValidateChecks(this.chainLocation);
-    this.chain = await loadFromDisk(this.chainLocation);
+    runValidateChecks(this.chainLocation);
+    this.chain = loadFromDisk(this.chainLocation);
   }
 
   /**
@@ -40,7 +41,19 @@ class Chainson {
    * @param key key
    * @param value data
    */
-  // public add(key: string, value: object) {}
+  public add(key: string, value: object) {
+    if (!this.chain) throw new NoChainLoaded();
+    this.chain.chain.set(key, value);
+    this.store()
+  }
+
+  /**
+   * Add the updated chain to the queue to be made persistan
+   */
+  private store() {
+    if (!this.chain) throw new NoChainLoaded();
+    this.chainQueue.add(this.chain)
+  }
 }
 
 export = Chainson;

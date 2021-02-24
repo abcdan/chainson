@@ -1,5 +1,5 @@
 import * as fs from 'fs';
-import { global } from '../configs/global';
+import { CouldNotCreateChainfile } from '../errors/chainfile/could-not-create-chainfile';
 import { Chainfile } from '../models/chainfile';
 import { createChainfile } from './default-chain';
 
@@ -8,20 +8,21 @@ import { createChainfile } from './default-chain';
  * @param chainLocation location of the chainfile
  */
 export async function createFile(chainLocation: string) {
-  await fs.promises.writeFile(chainLocation, createChainfile(global.version));
+  await fs.promises.writeFile(chainLocation, createChainfile());
 }
 
 /**
  * Load the chainfile from the disk
  * @param chainLocation location of the chainfile
  */
-export async function loadFromDisk(chainLocation: string) {
+export function loadFromDisk(chainLocation: string): Chainfile {
+  let chainData = { } as Chainfile
   fs.readFile(chainLocation, 'utf-8', function read(err, data) {
     if (err) {
-      throw err;
+      throw new CouldNotCreateChainfile();
     }
-    const content = data;
     const chainfile = JSON.parse(data) as Chainfile;
-    return chainfile;
+    chainData = chainfile;
   });
+  return {} as Chainfile
 }
