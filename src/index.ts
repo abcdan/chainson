@@ -51,9 +51,9 @@ class Chainson {
    * Get the value from the chain
    * @param key key
    */
-  public get(key: any) {
+  public get(key: any): any {
     if (!this.chain) throw new NoChainLoaded();
-    this.chain.chain.get(key);
+    return this.chain.chain.get(key);
   }
 
   /**

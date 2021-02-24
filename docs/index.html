@@ -91,6 +91,10 @@
 				</a>
 				<p>We all have worked on an application that, for example, needed a simple settings menu or has to store something based on what an user enters and just want to simply store it. Usually, this requires you to setup some sort of database (such as SQLite or even heavier databases). This <em>can</em> take some effort and introduces security issues if not properly implemented (such as SQL-Injection).</p>
 				<p>That&#39;s why I&#39;m working on a library to simply <code>store</code> and <code>retrieve</code> data without having to set up anything or having to think about security.</p>
+				<a href="#isn39t-this-basically-storing-a-map-to-json-and-vice-verca" id="isn39t-this-basically-storing-a-map-to-json-and-vice-verca" style="color: inherit; text-decoration: none;">
+					<h2>Isn&#39;t this basically storing a map to JSON and vice verca?</h2>
+				</a>
+				<p>Kinda, yes! But it&#39;ll be able to do much more than just storing and retrieving data. Besides that, it&#39;s a lot of fun for me learning new things while working on a project that I&#39;m actually planning on using myself in the future.</p>
 				<a href="#why-use-it" id="why-use-it" style="color: inherit; text-decoration: none;">
 					<h2>Why use it?</h2>
 				</a>
@@ -110,6 +114,7 @@
 				<ul>
 					<li><input checked="" disabled="" type="checkbox"> Check if chainfile already exists</li>
 					<li><input checked="" disabled="" type="checkbox"> Create chainfile if none is available</li>
+					<li><input checked="" disabled="" type="checkbox"> Queue for adding, removing, etc. to avoid getting the file corrupt</li>
 					<li><input disabled="" type="checkbox"> Check if chainfile is writable</li>
 					<li><input disabled="" type="checkbox"> Check if chainfile is readable</li>
 					<li><input disabled="" type="checkbox"> Loading chainfile into memory</li>
@@ -123,7 +128,6 @@
 					<li><input disabled="" type="checkbox"> Check if exists in chain</li>
 					<li><input disabled="" type="checkbox"> Write a complex parser to add/change/remove specific key/value pairs <a href="https://stackoverflow.com/questions/62369838/javascript-parse-object-key-value-from-string-keys">example of what I mean</a></li>
 					<li><input disabled="" type="checkbox"> In between editing and saving lock the chain (chainfile.json.lock) with an ID that has to match the process trying to edit it in order to unlock it</li>
-					<li><input disabled="" type="checkbox"> Queue for adding, removing, etc. to avoid getting the file corrupt</li>
 					<li><input disabled="" type="checkbox"> Optional <code>Chainhistory</code> folder with older versions of the chain, can be &quot;every 5 minutes&quot; or &quot;every change&quot; etc.</li>
 					<li><input disabled="" type="checkbox"> Robust logging system</li>
 					<li><input disabled="" type="checkbox"> Robust error handling</li>
@@ -145,6 +149,7 @@
 				<p>To ensure everything is formatted and linted, simply run <code>npm run prepare-for-release</code> and all the things that need to be ran will be run. If there are <strong>any</strong> errors or warnings: ⚠️ DO NOT RELEASE ⚠️ and fix the issues or wait for a fix to be implemented.</p>
 				<p>This ensures everything is consistent across all releases.</p>
 				<p>If you are contributing to the project ensure you run this command before you open a pull request. There have to be no errors before we&#39;re gonna merge your pull request so everything stays consistent.</p>
+				<p>During development you probably don&#39;t want to constantly generate documentation. That&#39;s why I&#39;ve added <code>npm run fix</code> to make your life easier during development.</p>
 				<a href="#done-reading-check-out-this-joke" id="done-reading-check-out-this-joke" style="color: inherit; text-decoration: none;">
 					<h2>Done reading? Check out this joke!</h2>
 				</a>
