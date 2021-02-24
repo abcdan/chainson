@@ -11,7 +11,9 @@ import { createFile } from './storage';
  */
 export async function runValidateChecks(chainLocation: string) {
   const exists = await checkChainExists(chainLocation);
-  if(!exists) { createFile(chainLocation) }
+  if (!exists) {
+    createFile(chainLocation);
+  }
 }
 
 async function checkChainExists(chainLocation: string) {
