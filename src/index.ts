@@ -1,3 +1,4 @@
+import { NoLinkFound } from './errors/chain/no-link';
 import { NoChainLoaded } from './errors/chainfile/no-chain-loaded';
 import { Chainfile } from './models/chainfile';
 import { ChainQueue } from './modules/queue';
@@ -24,18 +25,7 @@ class Chainson {
     runValidateChecks(this.chainLocation);
     this.chain = loadFromDisk(this.chainLocation);
   }
-
-  /**
-   *
-   * @param message the message that needs to be logged
-   * @param level verbose/normal/crucial
-   */
-  private log(message: string, level = 'VERBOSE') {
-    // TODO: Implement a way to only show errors based on the level
-    // TODO: refactor log('...', 'VERBOSE) to verboseLog
-    // console.log(`${message}`);
-  }
-
+  
   /**
    * Add a link to the chain
    * @param key key
@@ -53,13 +43,23 @@ class Chainson {
    */
   public get(key: string): any {
     if (!this.chain) throw new NoChainLoaded();
-    return this.chain.chain.get(key);
+    if(!this.contains(key)) throw new NoLinkFound(key)
+    return this.chain.chain.get(key)
+  }
+
+  /**
+   * Check if the chain contains a certain key
+   * @param key key
+   */
+  public contains(key: string): boolean {
+    if(!this.chain) throw new NoChainLoaded()
+    return this.chain.chain.has(key)
   }
 
   /**
    * Returns the full chain as a map
    */
-  public full(): Map<string, any> {
+  public full(): Map<string, Object> {
     if (!this.chain) throw new NoChainLoaded();
     return this.chain.chain
     
