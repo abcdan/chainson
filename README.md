@@ -66,5 +66,8 @@ This ensures everything is consistent across all releases.
 
 If you are contributing to the project ensure you run this command before you open a pull request. There have to be no errors before we're gonna merge your pull request so everything stays consistent.
 
+## Done reading? Check out this joke!
+![Jokes Card](https://readme-jokes.vercel.app/api)
+
 ## License
 The library is released under an Apache 2.0 License.
