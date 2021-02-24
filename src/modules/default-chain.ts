@@ -14,6 +14,9 @@ function createChainfile(): string {
     chain: new Map(),
   } as Chainfile;
 
+  chainfile.chain.set('chainsuccess', true)
+
+  // TODO: Clean up
   const tempChain = chainfile as any
   tempChain.chain = mapToObject(chainfile.chain)
   
