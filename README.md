@@ -4,7 +4,7 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/abcdan/chainson)
 ![NPM](https://img.shields.io/npm/l/chainson)
 
-A JSON file-based database with a queuing system
+🪐 chainson is JSON file database with zero dependencies.
 ```
 This library is still heavily in development.
 ```

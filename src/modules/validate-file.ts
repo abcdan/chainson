@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import { createFile } from './storage';
 
 // TODO: Move file exists here
 // TODO: Check if existing file is readable here
@@ -9,10 +10,8 @@ import * as fs from 'fs';
  * @param chainLocation chainfile location
  */
 export async function runValidateChecks(chainLocation: string) {
-  await checkChainExists(chainLocation);
-
-  // TODO: Instead of returning true/false, make it throw errors
-  return true;
+  const exists = await checkChainExists(chainLocation);
+  if(!exists) { createFile(chainLocation) }
 }
 
 async function checkChainExists(chainLocation: string) {

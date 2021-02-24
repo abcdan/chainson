@@ -1,12 +1,15 @@
+import { ChainQueue } from './modules/queue';
 import { createFile } from './modules/storage';
 class Chainson {
   private chainLocation: string;
   private output: string;
+  private chainQueue: ChainQueue;
 
   constructor(chainLocation = 'chainfile', output = 'NORMAL') {
     this.chainLocation = chainLocation + '.json';
     this.output = output;
     this.init();
+    this.chainQueue = new ChainQueue(this.chainLocation);
   }
 
   /**
