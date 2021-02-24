@@ -3,6 +3,7 @@
 ![npm](https://img.shields.io/npm/dw/chainson)
 ![GitHub last commit](https://img.shields.io/github/last-commit/abcdan/chainson)
 ![NPM](https://img.shields.io/npm/l/chainson)
+[![Ecologi (Trees)](https://img.shields.io/ecologi/trees/lngzl)](https://ecologi.com/lngzl?r=6005cc57f70194001deaedfa)
 
 🪐 chainson is JSON file database with zero dependencies.
 
