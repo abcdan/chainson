@@ -30,17 +30,6 @@ class Chainson {
     // TODO: refactor log('...', 'VERBOSE) to verboseLog
     // console.log(`${message}`);
   }
-
-  private async checkChainExists() {
-    return fs.existsSync(this.fileLocation);
-  }
-
-  private async createFile() {
-    const fileExists = await this.checkChainExists();
-    if (!fileExists) {
-      await fs.promises.writeFile(this.fileLocation, createChainfile(global.version));
-    }
-  }
 }
 
 export = Chainson;
