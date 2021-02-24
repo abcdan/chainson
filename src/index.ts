@@ -1,3 +1,4 @@
+import { LinkAlreadyExists } from './errors/chain/link-already-exists';
 import { NoLinkFound } from './errors/chain/no-link';
 import { NoChainLoaded } from './errors/chainfile/no-chain-loaded';
 import { Chainfile } from './models/chainfile';
@@ -33,6 +34,7 @@ class Chainson {
    */
   public add(key: any, value: any) {
     if (!this.chain) throw new NoChainLoaded();
+    if(this.contains(key)) throw new LinkAlreadyExists(key)
     this.chain.chain.set(key, value);
     this.store();
   }
