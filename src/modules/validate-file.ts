@@ -16,6 +16,10 @@ export async function runValidateChecks(chainLocation: string) {
   }
 }
 
+/**
+ * Check if the chainfile exists on the disk
+ * @param chainLocation chainfile location
+ */
 async function checkChainExists(chainLocation: string) {
   return fs.existsSync(chainLocation);
 }

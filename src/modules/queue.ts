@@ -18,13 +18,18 @@ export class ChainQueue extends EventEmitter {
     this.chainLocation = chainLocation;
   }
 
-  // add item to the queue and write (if not already writing)
-  add(data: Chainfile) {
-    this.chainQueue.push(data);
+  /**
+   * Add a chainfile that needs to be saved to the queue
+   * @param chainfile chainfile to add to the queue
+   */
+  add(chainfile: Chainfile) {
+    this.chainQueue.push(chainfile);
     this.store();
   }
 
-  // write next block from the queue (if not already writing)
+  /**
+   * Write the next chainfile to the disk from the queue
+   */
   async store() {
     while (!this.paused && this.chainQueue.length) {
       const buf = this.chainQueue.shift();
@@ -44,15 +49,25 @@ export class ChainQueue extends EventEmitter {
     }
   }
 
+  /**
+   * Emit an error when something goes wrong
+   * @param e error
+   */
   err(e: any) {
     this.pause();
     this.emit('error', e);
   }
 
+  /**
+   * Pause writing of the chainfiles, when errors.
+   */
   pause() {
     this.paused = true;
   }
 
+  /**
+   * Resume writing the chainfiles to the disk
+   */
   resume() {
     this.paused = false;
     this.store();
