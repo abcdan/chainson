@@ -5,15 +5,14 @@
 // If nothing can be done to automatically try to heal the file, it should throw an error that will not be catched inside of the library so the developer can implement
 // what to do next themselves.
 
-import { Chainfile } from "../models/chainfile";
-
+import { Chainfile } from '../models/chainfile';
 
 /**
  * Validate if the chain is properly created (uses regexes to ensure everything matches the specification)
  * @param chain chainfile
  */
-function validateChain (chain: Chainfile) {
-  return true
+function validateChain(chain: Chainfile) {
+  return true;
 }
 
 /**
@@ -21,9 +20,9 @@ function validateChain (chain: Chainfile) {
  * @param version chainfile version
  */
 function parseVersion(version: string) {
-  const semVerRegex = /^([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+[0-9A-Za-z-]+)?$/
-  const results = version.match(semVerRegex) ? true : false
+  const semVerRegex = /^([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+[0-9A-Za-z-]+)?$/;
+  const results = version.match(semVerRegex) ? true : false;
 
   // TODO: Throw version mismatch error
-  return results
+  return results;
 }
