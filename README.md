@@ -48,6 +48,8 @@ Here follows a list of things that still need to be implemented:
 - [x] Check if chainfile already exists
 - [x] Create chainfile if none is available
 - [x] Queue for adding, removing, etc. to avoid getting the file corrupt
+- [x] Add to chain
+- [x] Getting from chain
 - [ ] Check if chainfile is writable
 - [ ] Check if chainfile is readable
 - [ ] Loading chainfile into memory
@@ -55,7 +57,6 @@ Here follows a list of things that still need to be implemented:
 - [ ] Automatic repairing of a chainfile
 - [ ] Automatic restoring of an older chainfile
 - [ ] Automatic merging of older and newer chainfile (if new one not fully functional)
-- [ ] Add to chain
 - [ ] Remove from chain
 - [ ] Update in chain
 - [ ] Check if exists in chain
@@ -66,6 +67,8 @@ Here follows a list of things that still need to be implemented:
 - [ ] Robust error handling
 - [ ] Undo function for recent changes (bottom of chainfile holds last x amount of change)
 - [ ] Have the entire thing be fully asynchronous (except methods appended with Sync for flexibility)
+
+_If something is [x], it doesn't mean that it's working properly. It's just means that it has been implemented. In the future I'm gonna add unit tests and make everything a lot more secure. I first want to build a base to work from._
 
 ## Documentation
 There are a few places to find documentation for the application:
