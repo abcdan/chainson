@@ -29,6 +29,8 @@ class Chainson {
     // TODO: refactor log('...', 'VERBOSE) to verboseLog
     // console.log(`${message}`);
   }
+
+  public add()
 }
 
 export = Chainson;
