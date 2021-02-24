@@ -6,8 +6,8 @@ import { createChainfile } from './default-chain';
  * Write a fresh chainfile to the disk
  * @param chainLocation location of the chainfile
  */
-export async function createFile(chainLocation: string) {
-  await fs.promises.writeFile(chainLocation, createChainfile());
+export function createFile(chainLocation: string) {
+  fs.writeFileSync(chainLocation, createChainfile());
 }
 
 /**
@@ -22,18 +22,16 @@ export function loadFromDisk(chainLocation: string): Chainfile {
 
 /**
  * Convert the raw JSON chain into the map that you can work with
- * @see https://stackoverflow.com/a/62198615/6257811
- * @param chainJson chain json data
+ * @param chain chain json data
  */
-function jsonToMap(chainJson: object) {
-  // TODO: make it infinitely dimentional { { { { { } } } } }
-  const dataMap = new Map(Object.entries(chainJson));
-  const resultMap = new Map();
-  for (const key of dataMap.keys()) {
-    const keyMap = new Map(Object.entries(dataMap.get(key)));
-    resultMap.set(key, keyMap);
+function jsonToMap(chain: object) {
+  // TODO: Optimize for speed
+  const tempChain = new Map<any, any>()
+  for (const [key, value] of Object.entries(chain)) {
+    tempChain.set(key, value)
   }
-  return resultMap;
+  
+  return tempChain;
 }
 
 /**

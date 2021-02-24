@@ -20,9 +20,20 @@ class Chainson {
   /**
    * Initializes the database, runs checks and sets everything up.
    */
-  private init() {
+  private async init() {
     runValidateChecks(this.chainLocation);
     this.chain = loadFromDisk(this.chainLocation);
+  }
+
+  /**
+   *
+   * @param message the message that needs to be logged
+   * @param level verbose/normal/crucial
+   */
+  private log(message: string, level = 'VERBOSE') {
+    // TODO: Implement a way to only show errors based on the level
+    // TODO: refactor log('...', 'VERBOSE) to verboseLog
+    // console.log(`${message}`);
   }
 
   /**
@@ -46,12 +57,22 @@ class Chainson {
   }
 
   /**
+   * Returns the full chain as a map
+   */
+  public full(): Map<any, any> {
+    if (!this.chain) throw new NoChainLoaded();
+    return this.chain.chain
+    
+  }
+
+  /**
    * Add the updated chain to the queue to be made persistan
    */
   private store() {
     if (!this.chain) throw new NoChainLoaded();
     this.chainQueue.add(this.chain);
   }
+  
 }
 
 export = Chainson;

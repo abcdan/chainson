@@ -15,7 +15,7 @@ export function runValidateChecks(chainLocation: string) {
   }
 
   checkRead(chainLocation);
-  checkRead(chainLocation);
+  checkWrite(chainLocation);
 }
 
 /**
