@@ -1,5 +1,4 @@
 import * as EventEmitter from 'events';
-import * as fs from 'fs';
 import { Chainfile } from '../models/chainfile';
 
 // TODO: Add a way to temporarily block the node thread to ensure everything
@@ -35,14 +34,7 @@ export class ChainQueue extends EventEmitter {
       const buf = this.chainQueue.shift();
       const chainJson = JSON.stringify(buf);
       try {
-        await fs.writeFile(this.chainLocation, chainJson, (err) => {
-          if (err) {
-            this.err(err);
-          } else {
-            // TODO: Move on to the next one
-            this.store();
-          }
-        });
+        await 
       } catch (e) {
         this.err(e);
       }
