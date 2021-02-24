@@ -10,7 +10,7 @@ function createChainfile(): string {
     version: global.version,
     createdAt: new Date(),
     updatedAt: new Date(),
-    chain: new Map().set("success", true)
+    chain: new Map().set('success', true),
   } as Chainfile;
 
   return JSON.stringify(chainfile);

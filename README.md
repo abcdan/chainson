@@ -32,6 +32,9 @@ We all have worked on an application that, for example, needed a simple settings
 
 That's why I'm working on a library to simply `store` and `retrieve` data without having to set up anything or having to think about security.
 
+## Isn't this basically storing a map to JSON and vice verca?
+Kinda, yes! But it'll be able to do much more than just storing and retrieving data. Besides that, it's a lot of fun for me learning new things while working on a project that I'm actually planning on using myself in the future.
+
 ## Why use it?
 - It's **easy to use**. Everything you need is already included by default with Node.js.
 - It's completely dependency free.
@@ -44,6 +47,7 @@ When the database is "started", it loads the chainfile into memory. Every change
 Here follows a list of things that still need to be implemented:
 - [x] Check if chainfile already exists
 - [x] Create chainfile if none is available
+- [x] Queue for adding, removing, etc. to avoid getting the file corrupt
 - [ ] Check if chainfile is writable
 - [ ] Check if chainfile is readable
 - [ ] Loading chainfile into memory
@@ -57,7 +61,6 @@ Here follows a list of things that still need to be implemented:
 - [ ] Check if exists in chain
 - [ ] Write a complex parser to add/change/remove specific key/value pairs [example of what I mean](https://stackoverflow.com/questions/62369838/javascript-parse-object-key-value-from-string-keys)
 - [ ] In between editing and saving lock the chain (chainfile.json.lock) with an ID that has to match the process trying to edit it in order to unlock it
-- [ ] Queue for adding, removing, etc. to avoid getting the file corrupt
 - [ ] Optional `Chainhistory` folder with older versions of the chain, can be "every 5 minutes" or "every change" etc.
 - [ ] Robust logging system
 - [ ] Robust error handling

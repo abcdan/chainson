@@ -41,10 +41,19 @@ class Chainson {
    * @param key key
    * @param value data
    */
-  public add(key: string, value: object) {
+  public add(key: any, value: any) {
     if (!this.chain) throw new NoChainLoaded();
     this.chain.chain.set(key, value);
-    this.store()
+    this.store();
+  }
+
+  /**
+   * Get the value from the chain
+   * @param key key
+   */
+  public get(key: any) {
+    if (!this.chain) throw new NoChainLoaded();
+    this.chain.chain.get(key);
   }
 
   /**
@@ -52,7 +61,7 @@ class Chainson {
    */
   private store() {
     if (!this.chain) throw new NoChainLoaded();
-    this.chainQueue.add(this.chain)
+    this.chainQueue.add(this.chain);
   }
 }
 
