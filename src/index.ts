@@ -1,4 +1,4 @@
-import * as fs from "fs";
+import * as fs from 'fs';
 import { global } from './configs/global';
 import { NoFileError } from './errors/no-file-error';
 import { createChainfile } from './modules/default-chain';

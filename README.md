@@ -39,5 +39,14 @@ Here follows a list of things that still need to be implemented:
 - [ ] Undo function for recent changes (bottom of chainfile holds last x amount of change)
 
 
+## How to release a new version or contribute.
+This part of the documention is mainly for myself at the moment (or people who might have release permissions in the future).
+
+To ensure everything is formatted and linted, simply run `npm run prepare-for-release` and all the things that need to be ran will be run. If there are **any** errors or warnings: ⚠️ DO NOT RELEASE ⚠️ and fix the issues or wait for a fix to be implemented.
+
+This ensures everything is consistent across all releases.
+
+If you are contributing to the project ensure you run this command before you open a pull request. There have to be no errors before we're gonna merge your pull request so everything stays consistent.
+
 ## License
 The library is released under an Apache 2.0 License.

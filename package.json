@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\"",
-    "lint": "tslint -p tsconfig.json"
+    "lint": "tslint -p tsconfig.json",
+    "prepare-for-release": "npm run format && npm run lint && npm run build"
   },
   "repository": {
     "type": "git",
