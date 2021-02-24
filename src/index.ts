@@ -30,7 +30,9 @@ class Chainson {
     // console.log(`${message}`);
   }
 
-  public add()
+  public add(key: string, value: object) {
+    
+  }
 }
 
 export = Chainson;

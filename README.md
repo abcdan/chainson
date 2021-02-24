@@ -46,16 +46,16 @@ Here follows a list of things that still need to be implemented:
 - [ ] Automatic restoring of an older chainfile
 - [ ] Automatic merging of older and newer chainfile (if new one not fully functional)
 - [ ] Add to chain
-- [ ] Check if exists in chain
 - [ ] Remove from chain
 - [ ] Update in chain
+- [ ] Check if exists in chain
+- [ ] Write a complex parser to add/change/remove specific key/value pairs [example of what I mean](https://stackoverflow.com/questions/62369838/javascript-parse-object-key-value-from-string-keys)
 - [ ] In between editing and saving lock the chain (chainfile.json.lock) with an ID that has to match the process trying to edit it in order to unlock it
 - [ ] Queue for adding, removing, etc. to avoid getting the file corrupt
 - [ ] Optional `Chainhistory` folder with older versions of the chain, can be "every 5 minutes" or "every change" etc.
 - [ ] Robust logging system
 - [ ] Robust error handling
 - [ ] Undo function for recent changes (bottom of chainfile holds last x amount of change)
-
 
 ## How to release a new version or contribute.
 This part of the documention is mainly for myself at the moment (or people who might have release permissions in the future).
