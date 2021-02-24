@@ -1,6 +1,6 @@
 import * as fs from 'fs';
-import * as util from 'util';
 import { global } from '../configs/global';
+import { Chainfile } from '../models/chainfile';
 import { createChainfile } from './default-chain';
 
 /**
@@ -15,8 +15,14 @@ export async function createFile(chainLocation: string) {
  * Load the chainfile from the disk
  * @param chainLocation location of the chainfile
  */
-export async function loadFromDisk(chainLocation: string) { 
-  const readFile = util.promisify(fs.readFile);
-  const chainFile = readFile(chainLocation);
-  return chainFile;
+export async function loadFromDisk(chainLocation: string) {
+  fs.readFile(chainLocation, 'utf-8', function read(err, data) {
+    if (err) {
+        throw err;
+    }
+    const content = data;
+    const chainfile = JSON.parse(data) as Chainfile
+    console.log(chainfile)
+    return chainfile;
+  });
 }

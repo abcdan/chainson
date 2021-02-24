@@ -1,9 +1,13 @@
+import { Chainfile } from './models/chainfile';
 import { ChainQueue } from './modules/queue';
-import { createFile } from './modules/storage';
+import { loadFromDisk } from './modules/storage';
+import { runValidateChecks } from './modules/validate-file';
+
 class Chainson {
   private chainLocation: string;
   private output: string;
   private chainQueue: ChainQueue;
+  private chain: Chainfile | any;
 
   constructor(chainLocation = 'chainfile', output = 'NORMAL') {
     this.chainLocation = chainLocation + '.json';
@@ -15,8 +19,9 @@ class Chainson {
   /**
    * Initializes the database, runs checks and sets everything up.
    */
-  private init(): void {
-    createFile(this.chainLocation);
+   private async init() {
+    await runValidateChecks(this.chainLocation);
+    this.chain = await loadFromDisk(this.chainLocation);
   }
 
   /**
@@ -30,9 +35,12 @@ class Chainson {
     // console.log(`${message}`);
   }
 
-  public add(key: string, value: object) {
-    
-  }
+  /**
+   * Add a link to the chain
+   * @param key key
+   * @param value data
+   */
+  // public add(key: string, value: object) {}
 }
 
 export = Chainson;
