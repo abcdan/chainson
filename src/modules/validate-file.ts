@@ -14,9 +14,8 @@ export function runValidateChecks(chainLocation: string): void {
     createFile(chainLocation);
   }
 
-  if(checkFileEmpty(chainLocation)) {
+  if (checkFileEmpty(chainLocation)) {
     createFile(chainLocation);
-
   }
 
   checkRead(chainLocation);
@@ -63,6 +62,6 @@ function checkWrite(chainLocation: string): boolean {
  */
 function checkFileEmpty(chainLocation: string): boolean {
   // TODO: Make an option to turn this off and throw an error
-  const stats = fs.statSync(chainLocation)
-  return stats.size === 0
+  const stats = fs.statSync(chainLocation);
+  return stats.size === 0;
 }

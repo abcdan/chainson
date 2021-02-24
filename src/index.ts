@@ -26,7 +26,7 @@ class Chainson {
     runValidateChecks(this.chainLocation);
     this.chain = loadFromDisk(this.chainLocation);
   }
-  
+
   /**
    * Add a link to the chain
    * @param key key
@@ -34,7 +34,7 @@ class Chainson {
    */
   public add(key: any, value: any) {
     if (!this.chain) throw new NoChainLoaded();
-    if(this.contains(key)) throw new LinkAlreadyExists(key)
+    if (this.contains(key)) throw new LinkAlreadyExists(key);
     this.chain.chain.set(key, value);
     this.store();
   }
@@ -45,8 +45,8 @@ class Chainson {
    */
   public get(key: string): any {
     if (!this.chain) throw new NoChainLoaded();
-    if(!this.contains(key)) throw new NoLinkFound(key)
-    return this.chain.chain.get(key)
+    if (!this.contains(key)) throw new NoLinkFound(key);
+    return this.chain.chain.get(key);
   }
 
   /**
@@ -54,17 +54,16 @@ class Chainson {
    * @param key key
    */
   public contains(key: string): boolean {
-    if(!this.chain) throw new NoChainLoaded()
-    return this.chain.chain.has(key)
+    if (!this.chain) throw new NoChainLoaded();
+    return this.chain.chain.has(key);
   }
 
   /**
    * Returns the full chain as a map
    */
-  public full(): Map<string, Object> {
+  public full(): Map<string, any> {
     if (!this.chain) throw new NoChainLoaded();
-    return this.chain.chain
-    
+    return this.chain.chain;
   }
 
   /**
@@ -74,7 +73,6 @@ class Chainson {
     if (!this.chain) throw new NoChainLoaded();
     this.chainQueue.add(this.chain);
   }
-  
 }
 
 export = Chainson;

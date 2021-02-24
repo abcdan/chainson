@@ -11,15 +11,16 @@ function createChainfile(): string {
     version: general.version,
     createdAt: new Date(),
     updatedAt: new Date(),
-    chain: new Map(),
+    chain: new Map<string, any>(),
   } as Chainfile;
 
-  chainfile.chain.set('chainsuccess', true)
+  // TODO: Make boolean functional
+  chainfile.chain.set('chainsuccess', true);
 
   // TODO: Clean up
-  const tempChain = chainfile as any
-  tempChain.chain = mapToObject(chainfile.chain)
-  
+  const tempChain = chainfile as any;
+  tempChain.chain = mapToObject(chainfile.chain);
+
   return JSON.stringify(tempChain);
 }
 

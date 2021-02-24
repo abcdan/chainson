@@ -7,7 +7,6 @@ import { createChainfile } from './default-chain';
  * @param chainLocation location of the chainfile
  */
 export function createFile(chainLocation: string) {
-  console.log('ok', createChainfile())
   fs.writeFileSync(chainLocation, createChainfile());
 }
 
@@ -16,7 +15,7 @@ export function createFile(chainLocation: string) {
  * @param chainLocation location of the chainfile
  */
 export function loadFromDisk(chainLocation: string): Chainfile {
-  let data = JSON.parse(fs.readFileSync(chainLocation, 'utf8'));
+  const data = JSON.parse(fs.readFileSync(chainLocation, 'utf8'));
   data.chain = jsonToMap(data.chain);
   return data as Chainfile;
 }
@@ -25,13 +24,13 @@ export function loadFromDisk(chainLocation: string): Chainfile {
  * Convert the raw JSON chain into the map that you can work with
  * @param chain chain json data
  */
-function jsonToMap(chain: object): Map<string, Object> {
+function jsonToMap(chain: object): Map<string, object> {
   // TODO: Optimize for speed
-  const tempChain = new Map<string, Object>()
+  const tempChain = new Map<string, object>();
   for (const [key, value] of Object.entries(chain)) {
-    tempChain.set(key, value)
+    tempChain.set(key, value);
   }
-    
+
   return tempChain;
 }
 
@@ -42,9 +41,9 @@ function jsonToMap(chain: object): Map<string, Object> {
  * @param chainfile chainfile contents
  */
 export function storeToDisk(chainLocation: string, chainfile: Chainfile): Promise<boolean> {
-  const tempChain =  Object.assign({}, chainfile) as any;
-  tempChain.chain = mapToObject(chainfile.chain)
-  const chainJson = JSON.stringify(tempChain)
+  const tempChain = Object.assign({}, chainfile) as any;
+  tempChain.chain = mapToObject(chainfile.chain);
+  const chainJson = JSON.stringify(tempChain);
   return new Promise((resolve, reject) => {
     fs.writeFile(chainLocation, chainJson, (err) => {
       if (err) {
@@ -61,6 +60,6 @@ export function storeToDisk(chainLocation: string, chainfile: Chainfile): Promis
  * @see https://gist.github.com/lukehorvat/133e2293ba6ae96a35ba#gistcomment-2624332
  * @param map map that needs to be converted
  */
-export function mapToObject(map: Map<string, Object>) {
-  return Array.from(map.entries()).reduce((main, [key, value]) => ({...main, [key]: value}), {})
+export function mapToObject(map: Map<string, any>) {
+  return Array.from(map.entries()).reduce((main, [key, value]) => ({ ...main, [key]: value }), {});
 }

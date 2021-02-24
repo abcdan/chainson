@@ -74,6 +74,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="modules_storage.html#createfile" class="tsd-kind-icon">create<wbr>File</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="modules_storage.html#loadfromdisk" class="tsd-kind-icon">load<wbr>From<wbr>Disk</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="modules_storage.html#maptoobject" class="tsd-kind-icon">map<wbr>ToObject</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="modules_storage.html#storetodisk" class="tsd-kind-icon">store<wbr>ToDisk</a></li>
 							</ul>
 						</section>
@@ -86,13 +87,13 @@
 					<a name="createfile" class="tsd-anchor"></a>
 					<h3>create<wbr>File</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">create<wbr>File<span class="tsd-signature-symbol">(</span>chainLocation<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>File<span class="tsd-signature-symbol">(</span>chainLocation<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/abcdan/chainson/blob/d2813fa/src/modules/storage.ts#L9">src/modules/storage.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/abcdan/chainson/blob/24b9bb4/src/modules/storage.ts#L9">src/modules/storage.ts:9</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -109,7 +110,7 @@
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -123,7 +124,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/abcdan/chainson/blob/d2813fa/src/modules/storage.ts#L17">src/modules/storage.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/abcdan/chainson/blob/24b9bb4/src/modules/storage.ts#L17">src/modules/storage.ts:17</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -145,6 +146,44 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="maptoobject" class="tsd-anchor"></a>
+					<h3>map<wbr>ToObject</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">map<wbr>ToObject<span class="tsd-signature-symbol">(</span>map<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{}</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/abcdan/chainson/blob/24b9bb4/src/modules/storage.ts#L63">src/modules/storage.ts:63</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Converst a map into an object (to store it)</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>see</dt>
+									<dd><p><a href="https://gist.github.com/lukehorvat/133e2293ba6ae96a35ba#gistcomment-2624332">https://gist.github.com/lukehorvat/133e2293ba6ae96a35ba#gistcomment-2624332</a></p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>map: <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>map that needs to be converted</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{}</span></h4>
+							<ul class="tsd-parameters">
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="storetodisk" class="tsd-anchor"></a>
 					<h3>store<wbr>ToDisk</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
@@ -154,7 +193,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/abcdan/chainson/blob/d2813fa/src/modules/storage.ts#L45">src/modules/storage.ts:45</a></li>
+									<li>Defined in <a href="https://github.com/abcdan/chainson/blob/24b9bb4/src/modules/storage.ts#L43">src/modules/storage.ts:43</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -192,6 +231,12 @@
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="configs_general.html">configs/general</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="errors_chain_link_already_exists.html">errors/chain/link-<wbr>already-<wbr>exists</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="errors_chain_no_link.html">errors/chain/no-<wbr>link</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="errors_chainfile_no_chain_loaded.html">errors/chainfile/no-<wbr>chain-<wbr>loaded</a>
@@ -247,6 +292,9 @@
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="modules_storage.html#loadfromdisk" class="tsd-kind-icon">load<wbr>From<wbr>Disk</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="modules_storage.html#maptoobject" class="tsd-kind-icon">map<wbr>ToObject</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="modules_storage.html#storetodisk" class="tsd-kind-icon">store<wbr>ToDisk</a>
