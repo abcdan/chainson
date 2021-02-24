@@ -74,6 +74,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="modules_storage.html#createfile" class="tsd-kind-icon">create<wbr>File</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="modules_storage.html#loadfromdisk" class="tsd-kind-icon">load<wbr>From<wbr>Disk</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="modules_storage.html#storetodisk" class="tsd-kind-icon">store<wbr>ToDisk</a></li>
 							</ul>
 						</section>
 					</div>
@@ -91,7 +92,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/abcdan/chainson/blob/6c0ab39/src/modules/storage.ts#L9">src/modules/storage.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/abcdan/chainson/blob/d9e0e41/src/modules/storage.ts#L9">src/modules/storage.ts:9</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -122,7 +123,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/abcdan/chainson/blob/6c0ab39/src/modules/storage.ts#L17">src/modules/storage.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/abcdan/chainson/blob/d9e0e41/src/modules/storage.ts#L17">src/modules/storage.ts:17</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -143,6 +144,44 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="storetodisk" class="tsd-anchor"></a>
+					<h3>store<wbr>ToDisk</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">store<wbr>ToDisk<span class="tsd-signature-symbol">(</span>chainLocation<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, chainfile<span class="tsd-signature-symbol">: </span><a href="../interfaces/models_chainfile.chainfile.html" class="tsd-signature-type" data-tsd-kind="Interface">Chainfile</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/abcdan/chainson/blob/d9e0e41/src/modules/storage.ts#L45">src/modules/storage.ts:45</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Safely write the file the chain to the disk
+									Do not call this function outside of the queue without a proper reason.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>chainLocation: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>chainfile location</p>
+									</div>
+								</li>
+								<li>
+									<h5>chainfile: <a href="../interfaces/models_chainfile.chainfile.html" class="tsd-signature-type" data-tsd-kind="Interface">Chainfile</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>chainfile contents</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -152,7 +191,7 @@
 						<a href="../modules.html">Exports</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="configs_global.html">configs/global</a>
+						<a href="configs_general.html">configs/general</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="errors_chainfile_could_not_create_chainfile.html">errors/chainfile/could-<wbr>not-<wbr>create-<wbr>chainfile</a>
@@ -202,6 +241,9 @@
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="modules_storage.html#loadfromdisk" class="tsd-kind-icon">load<wbr>From<wbr>Disk</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="modules_storage.html#storetodisk" class="tsd-kind-icon">store<wbr>ToDisk</a>
 					</li>
 				</ul>
 			</nav>
