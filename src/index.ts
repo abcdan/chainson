@@ -1,10 +1,10 @@
 import { createFile } from './modules/storage';
 class Chainson {
-  private fileLocation: string;
+  private chainLocation: string;
   private output: string;
 
-  constructor(fileLocation = 'chainfile', output = 'NORMAL') {
-    this.fileLocation = fileLocation + '.json';
+  constructor(chainLocation = 'chainfile', output = 'NORMAL') {
+    this.chainLocation = chainLocation + '.json';
     this.output = output;
     this.init();
   }
@@ -13,7 +13,7 @@ class Chainson {
    * Initializes the database, runs checks and sets everything up.
    */
   private init(): void {
-    createFile(this.fileLocation);
+    createFile(this.chainLocation);
   }
 
   /**

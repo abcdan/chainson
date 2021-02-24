@@ -3,9 +3,9 @@ import { global } from '../configs/global';
 import { createChainfile } from './default-chain';
 import { runValidateChecks } from './validate-file';
 
-export async function createFile(fileLocation: string) {
-  const fileExists = await runValidateChecks(fileLocation);
+export async function createFile(chainLocation: string) {
+  const fileExists = await runValidateChecks(chainLocation);
   if (!fileExists) {
-    await fs.promises.writeFile(fileLocation, createChainfile(global.version));
+    await fs.promises.writeFile(chainLocation, createChainfile(global.version));
   }
 }
