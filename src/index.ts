@@ -1,8 +1,4 @@
-import * as fs from 'fs';
-import { global } from './configs/global';
-import { NoFileError } from './errors/no-file-error';
-import { createChainfile } from './modules/default-chain';
-
+import { createFile } from './modules/storage';
 class Chainson {
   private fileLocation: string;
   private output: string;
@@ -17,7 +13,7 @@ class Chainson {
    * Initializes the database, runs checks and sets everything up.
    */
   private init(): void {
-    this.createFile();
+    createFile(this.fileLocation);
   }
 
   /**

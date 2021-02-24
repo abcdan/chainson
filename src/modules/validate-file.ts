@@ -9,10 +9,10 @@ import * as fs from 'fs';
  * @param fileLocation chainfile location
  */
 export async function runValidateChecks(fileLocation: string) {
-  await checkChainExists(fileLocation)
+  await checkChainExists(fileLocation);
 
   // TODO: Instead of returning true/false, make it throw errors
-  return true
+  return true;
 }
 
 async function checkChainExists(fileLocation: string) {
