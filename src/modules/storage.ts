@@ -18,11 +18,10 @@ export async function createFile(chainLocation: string) {
 export async function loadFromDisk(chainLocation: string) {
   fs.readFile(chainLocation, 'utf-8', function read(err, data) {
     if (err) {
-        throw err;
+      throw err;
     }
     const content = data;
-    const chainfile = JSON.parse(data) as Chainfile
-    console.log(chainfile)
+    const chainfile = JSON.parse(data) as Chainfile;
     return chainfile;
   });
 }

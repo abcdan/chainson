@@ -19,7 +19,7 @@ class Chainson {
   /**
    * Initializes the database, runs checks and sets everything up.
    */
-   private async init() {
+  private async init() {
     await runValidateChecks(this.chainLocation);
     this.chain = await loadFromDisk(this.chainLocation);
   }
