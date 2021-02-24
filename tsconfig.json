@@ -7,6 +7,6 @@
     "strict": true,
     "moduleResolution": "node"
   },
-  "include": ["src"],
+  "include": ["src", "tests/index.test.ts", "tests/test"],
   "exclude": ["node_modules", "**/__tests__/*"]
 }
