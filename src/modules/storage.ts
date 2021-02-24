@@ -42,7 +42,7 @@ function jsonToMap(chain: object): Map<string, Object> {
  * @param chainfile chainfile contents
  */
 export function storeToDisk(chainLocation: string, chainfile: Chainfile): Promise<boolean> {
-  const tempChain = chainfile as any;
+  const tempChain =  Object.assign({}, chainfile) as any;
   tempChain.chain = mapToObject(chainfile.chain)
   const chainJson = JSON.stringify(tempChain)
   return new Promise((resolve, reject) => {

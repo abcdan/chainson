@@ -12,14 +12,14 @@ console.log(chain.full())
 chain.add("hello", "world")
 
 // Retrieve the data from the chain!
-// const world = chain.get("hello")
+const world = chain.get("hello")
 
 // Check if the chain has the "hello" key!
-// const contains = chain.contains("hello")
-// console.log(contains)
+const contains = chain.contains("hello")
+console.log(contains)
 
 // Print the results!
-// console.log(`Hello, ${world}!`)
+console.log(`Hello, ${world}!`)
 
 // Print the full at the end!
 console.log(chain.full())
