@@ -4,10 +4,10 @@ A JSON file-based database with a queuing system
 This library is still heavily in development.
 ```
 
-## Why create a libary like this?
+## Why create a library like this?
 We all have worked on an application that, for example, needed a simple settings menu or has to store something based on what an user enters and just want to simply store it. Usually, this requires you to setup some sort of database (such as SQLite or even heavier databases). This _can_ take some effort and introduces security issues if not properly implemented (such as SQL-Injection).
 
-That's why I'm working on a libary to simply `store` and `retrieve` data withing having to set up anything or having to think about security.
+That's why I'm working on a library to simply `store` and `retrieve` data without having to set up anything or having to think about security.
 
 ## Why use it?
 - It's **easy to use**. Everything you need is already included by default with Node.js.
