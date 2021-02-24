@@ -5,9 +5,15 @@
 ![NPM](https://img.shields.io/npm/l/chainson)
 
 🪐 chainson is JSON file database with zero dependencies.
+
+**Please read the following before using:**
 ```
-This library is still heavily in development.
+This library is still heavily in development. The API rapidly changes and methods might not work when you pull the latest version again. 
+
+As long as it's in the `0.x.x-a` (alpha) it's not recommended to use this library for production purposes.  
 ```
+
+Now we got that out of the way, let's start!
 
 ## Installing
 It's pretty easy cause we're on NPM! Simply run the following command to install the library as a dependency. We **do not** recommend installing it globally to ensure you use the right version in your projects.
@@ -56,6 +62,7 @@ Here follows a list of things that still need to be implemented:
 - [ ] Robust logging system
 - [ ] Robust error handling
 - [ ] Undo function for recent changes (bottom of chainfile holds last x amount of change)
+- [ ] Have the entire thing be fully asynchronous (except methods appended with Sync for flexibility)
 
 ## How to release a new version or contribute.
 This part of the documention is mainly for myself at the moment (or people who might have release permissions in the future).
