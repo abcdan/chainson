@@ -43,6 +43,9 @@ Kinda, yes! But it'll be able to do much more than just storing and retrieving d
 When the database is "started", it loads the chainfile into memory. Every change to the chainfile will be saved to a json file. 
 
 ## Roadmap
+**Moved**! I'm gonna keep updating this README until all of the tasks here are done. But if you want to see new tasks or an overview of what is being worked on head over to our Github Projects board with the Tasks over [here](https://github.com/abcdan/chainson/projects/1)
+
+
 Here follows a list of things that still need to be implemented:
 - [x] Check if chainfile already exists
 - [x] Create chainfile if none is available
@@ -54,11 +57,11 @@ Here follows a list of things that still need to be implemented:
 - [x] Loading chainfile into memory
 - [x] A store function to save memory to a file
 - [x] Check if exists in chain
+- [x] Remove from chain
+- [x] Update in chain
 - [ ] Automatic repairing of a chainfile
 - [ ] Automatic restoring of an older chainfile
 - [ ] Automatic merging of older and newer chainfile (if new one not fully functional)
-- [ ] Remove from chain
-- [ ] Update in chain
 - [ ] Write a complex parser to add/change/remove specific key/value pairs [example of what I mean](https://stackoverflow.com/questions/62369838/javascript-parse-object-key-value-from-string-keys)
 - [ ] In between editing and saving lock the chain (chainfile.json.lock) with an ID that has to match the process trying to edit it in order to unlock it
 - [ ] Optional `Chainhistory` folder with older versions of the chain, can be "every 5 minutes" or "every change" etc.
@@ -84,6 +87,10 @@ This ensures everything is consistent across all releases.
 If you are contributing to the project ensure you run this command before you open a pull request. There have to be no errors before we're gonna merge your pull request so everything stays consistent.
 
 During development you probably don't want to constantly generate documentation. That's why I've added `npm run fix` to make your life easier during development.
+
+When you are ready to make a pull request make a pull request to the latest `x.x.x-y` branch (ensure your branch is based on the latest version of dev to avoid any merge conflicts). Once that gets accepted it will be merged into the `x.x.x-y` branch. Once a new set of features is implemented and the version is ready for release we'll merge it with `master`. 
+
+In the meanwhile, I personally work on the `dev` branch with my own features. There is a chance that your code get changed on the `dev` branch after it has been merged for optimizations. So don't be scared if you see me changing your code :)
 
 ## Done reading? Check out this joke!
 ![Jokes Card](https://readme-jokes.vercel.app/api)
