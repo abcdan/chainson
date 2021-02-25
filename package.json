@@ -1,7 +1,7 @@
 {
   "name": "chainson",
   "version": "0.0.10-a",
-  "description": "A JSON file-based database with a queuing system",
+  "description": "🪐 chainson is JSON file database with zero dependencies.",
   "main": "index.js",
   "types": "main.d.ts",
   "scripts": {
