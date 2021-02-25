@@ -41,6 +41,9 @@ Kinda, yes! But it'll be able to do much more than just storing and retrieving d
 When the database is "started", it loads the chainfile into memory. Every change to the chainfile will be saved to a json file. 
 
 ## Roadmap
+**Moved**! I'm gonna keep updating this README until all of the tasks here are done. But if you want to see new tasks or an overview of what is being worked on head over to our Github Projects board with the Tasks over [here](https://github.com/abcdan/chainson/projects/1)
+
+
 Here follows a list of things that still need to be implemented:
 - [x] Check if chainfile already exists
 - [x] Create chainfile if none is available
@@ -52,11 +55,11 @@ Here follows a list of things that still need to be implemented:
 - [x] Loading chainfile into memory
 - [x] A store function to save memory to a file
 - [x] Check if exists in chain
+- [x] Remove from chain
+- [x] Update in chain
 - [ ] Automatic repairing of a chainfile
 - [ ] Automatic restoring of an older chainfile
 - [ ] Automatic merging of older and newer chainfile (if new one not fully functional)
-- [ ] Remove from chain
-- [ ] Update in chain
 - [ ] Write a complex parser to add/change/remove specific key/value pairs [example of what I mean](https://stackoverflow.com/questions/62369838/javascript-parse-object-key-value-from-string-keys)
 - [ ] In between editing and saving lock the chain (chainfile.json.lock) with an ID that has to match the process trying to edit it in order to unlock it
 - [ ] Optional `Chainhistory` folder with older versions of the chain, can be "every 5 minutes" or "every change" etc.
