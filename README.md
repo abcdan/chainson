@@ -86,6 +86,10 @@ If you are contributing to the project ensure you run this command before you op
 
 During development you probably don't want to constantly generate documentation. That's why I've added `npm run fix` to make your life easier during development.
 
+When you are ready to make a pull request make a pull request to the latest `x.x.x-y` branch (ensure your branch is based on the latest version of dev to avoid any merge conflicts). Once that gets accepted it will be merged into the `x.x.x-y` branch. Once a new set of features is implemented and the version is ready for release we'll merge it with `master`. 
+
+In the meanwhile, I personally work on the `dev` branch with my own features. There is a chance that your code get changed on the `dev` branch after it has been merged for optimizations. So don't be scared if you see me changing your code :)
+
 ## Done reading? Check out this joke!
 ![Jokes Card](https://readme-jokes.vercel.app/api)
 
