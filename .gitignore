@@ -9,6 +9,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+testchain.json
 chainfile.json
 
 # Runtime data

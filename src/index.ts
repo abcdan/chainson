@@ -27,6 +27,7 @@ class Chainson {
     this.chain = loadFromDisk(this.chainLocation);
   }
 
+  // TODO: Move add, get, has, contains, full, remove, update, forceStore to module
   /**
    * Add a link to the chain
    * @param key key
@@ -67,9 +68,41 @@ class Chainson {
   }
 
   /**
+   * Update a value in the chain
+   * @param key key
+   * @param value value
+   */
+  public update(key: any, value: any) {
+    if (!this.chain) throw new NoChainLoaded();
+    if (!this.contains(key)) throw new NoLinkFound(key);
+    this.chain.chain.set(key, value);
+    this.store();
+  }
+
+  /**
+   * Remove a value from the chain
+   * @param key key
+   * @param value value
+   */
+  public remove(key: any, value: any) {
+    if (!this.chain) throw new NoChainLoaded();
+    if (!this.contains(key)) throw new NoLinkFound(key);
+    this.chain.chain.delete(key);
+    this.store();
+  }
+
+  /**
    * Add the updated chain to the queue to be made persistan
    */
   private store() {
+    if (!this.chain) throw new NoChainLoaded();
+    this.chainQueue.add(this.chain);
+  }
+
+  /**
+   * Forcefully adds the memory chain to the disk
+   */
+  public forceStore() {
     if (!this.chain) throw new NoChainLoaded();
     this.chainQueue.add(this.chain);
   }

@@ -1,6 +1,6 @@
 {
   "name": "chainson",
-  "version": "0.0.6-a",
+  "version": "0.0.7-a",
   "description": "A JSON file-based database with a queuing system",
   "main": "index.js",
   "types": "main.d.ts",
@@ -10,14 +10,14 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
     "docs": "npx typedoc src/",
-    "fix": "npm run format && npm run lint && npm run build",
+    "fix": "npm run format && npm run lint && npm run build && npm run test",
     "prepare-for-release": "npm run fix && npm run docs"
   },
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node",
     "setupFilesAfterEnv": [
-      "./tests/setup.ts"
+      "./tests/setup.js"
     ]
   },
   "repository": {
