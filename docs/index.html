@@ -58,6 +58,7 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
+				<div style="text-align:center"><img src="https://file.coffee/u/0rmnUPqCtl.png" /></div>
 				<a href="#chainson" id="chainson" style="color: inherit; text-decoration: none;">
 					<h1>chainson</h1>
 				</a>
@@ -67,11 +68,8 @@
 					<img src="https://img.shields.io/npm/l/chainson" alt="NPM">
 				<a href="https://ecologi.com/lngzl?r=6005cc57f70194001deaedfa"><img src="https://img.shields.io/ecologi/trees/lngzl" alt="Ecologi (Trees)"></a></p>
 				<p>🪐 chainson is JSON file database with zero dependencies.</p>
-				<p><strong>Please read the following before using:</strong></p>
-				<pre><code><span style="color: #001080">This</span><span style="color: #000000"> </span><span style="color: #001080">library</span><span style="color: #000000"> </span><span style="color: #001080">is</span><span style="color: #000000"> </span><span style="color: #001080">still</span><span style="color: #000000"> </span><span style="color: #001080">heavily</span><span style="color: #000000"> </span><span style="color: #0000FF">in</span><span style="color: #000000"> </span><span style="color: #001080">development</span><span style="color: #000000">. </span><span style="color: #001080">The</span><span style="color: #000000"> </span><span style="color: #0070C1">API</span><span style="color: #000000"> </span><span style="color: #001080">rapidly</span><span style="color: #000000"> </span><span style="color: #001080">changes</span><span style="color: #000000"> </span><span style="color: #001080">and</span><span style="color: #000000"> </span><span style="color: #001080">methods</span><span style="color: #000000"> </span><span style="color: #001080">might</span><span style="color: #000000"> </span><span style="color: #001080">not</span><span style="color: #000000"> </span><span style="color: #001080">work</span><span style="color: #000000"> </span><span style="color: #001080">when</span><span style="color: #000000"> </span><span style="color: #001080">you</span><span style="color: #000000"> </span><span style="color: #001080">pull</span><span style="color: #000000"> </span><span style="color: #001080">the</span><span style="color: #000000"> </span><span style="color: #001080">latest</span><span style="color: #000000"> </span><span style="color: #001080">version</span><span style="color: #000000"> </span><span style="color: #001080">again</span><span style="color: #000000">. </span>
-
-<span style="color: #001080">As</span><span style="color: #000000"> </span><span style="color: #001080">long</span><span style="color: #000000"> </span><span style="color: #AF00DB">as</span><span style="color: #000000"> </span><span style="color: #267F99">it</span><span style="color: #A31515">&#039;s in the `0.x.x-a` (alpha) it&#039;</span><span style="color: #267F99">s</span><span style="color: #000000"> </span><span style="color: #267F99">not</span><span style="color: #000000"> </span><span style="color: #267F99">recommended</span><span style="color: #000000"> </span><span style="color: #267F99">to</span><span style="color: #000000"> </span><span style="color: #267F99">use</span><span style="color: #000000"> </span><span style="color: #267F99">this</span><span style="color: #000000"> </span><span style="color: #267F99">library</span><span style="color: #000000"> </span><span style="color: #267F99">for</span><span style="color: #000000"> </span><span style="color: #267F99">production</span><span style="color: #000000"> </span><span style="color: #267F99">purposes</span><span style="color: #000000">.  </span>
-</code></pre>
+				<p><strong>Please read the following before using:</strong>
+				This library is still heavily in development. The API rapidly changes and methods might not work when you pull the latest version again. As long as it&#39;s in the <code>0.x.x-a</code> (alpha) it&#39;s not recommended to use this library for production purposes where you are not gonna update the library every release. I&#39;m trying to keep the API as close to the last version as possible but I might introduce breaking changes. I&#39;ll aim to post the breaking changes in the pull request when I release a new version.</p>
 				<p>Now we got that out of the way, let&#39;s start!</p>
 				<a href="#installing" id="installing" style="color: inherit; text-decoration: none;">
 					<h2>Installing</h2>
@@ -111,6 +109,7 @@
 				<a href="#roadmap" id="roadmap" style="color: inherit; text-decoration: none;">
 					<h2>Roadmap</h2>
 				</a>
+				<p><strong>Moved</strong>! I&#39;m gonna keep updating this README until all of the tasks here are done. But if you want to see new tasks or an overview of what is being worked on head over to our Github Projects board with the Tasks over <a href="https://github.com/abcdan/chainson/projects/1">here</a></p>
 				<p>Here follows a list of things that still need to be implemented:</p>
 				<ul>
 					<li><input checked="" disabled="" type="checkbox"> Check if chainfile already exists</li>
@@ -123,11 +122,11 @@
 					<li><input checked="" disabled="" type="checkbox"> Loading chainfile into memory</li>
 					<li><input checked="" disabled="" type="checkbox"> A store function to save memory to a file</li>
 					<li><input checked="" disabled="" type="checkbox"> Check if exists in chain</li>
+					<li><input checked="" disabled="" type="checkbox"> Remove from chain</li>
+					<li><input checked="" disabled="" type="checkbox"> Update in chain</li>
 					<li><input disabled="" type="checkbox"> Automatic repairing of a chainfile</li>
 					<li><input disabled="" type="checkbox"> Automatic restoring of an older chainfile</li>
 					<li><input disabled="" type="checkbox"> Automatic merging of older and newer chainfile (if new one not fully functional)</li>
-					<li><input disabled="" type="checkbox"> Remove from chain</li>
-					<li><input disabled="" type="checkbox"> Update in chain</li>
 					<li><input disabled="" type="checkbox"> Write a complex parser to add/change/remove specific key/value pairs <a href="https://stackoverflow.com/questions/62369838/javascript-parse-object-key-value-from-string-keys">example of what I mean</a></li>
 					<li><input disabled="" type="checkbox"> In between editing and saving lock the chain (chainfile.json.lock) with an ID that has to match the process trying to edit it in order to unlock it</li>
 					<li><input disabled="" type="checkbox"> Optional <code>Chainhistory</code> folder with older versions of the chain, can be &quot;every 5 minutes&quot; or &quot;every change&quot; etc.</li>
@@ -153,6 +152,8 @@
 				<p>This ensures everything is consistent across all releases.</p>
 				<p>If you are contributing to the project ensure you run this command before you open a pull request. There have to be no errors before we&#39;re gonna merge your pull request so everything stays consistent.</p>
 				<p>During development you probably don&#39;t want to constantly generate documentation. That&#39;s why I&#39;ve added <code>npm run fix</code> to make your life easier during development.</p>
+				<p>When you are ready to make a pull request make a pull request to the latest <code>x.x.x-y</code> branch (ensure your branch is based on the latest version of dev to avoid any merge conflicts). Once that gets accepted it will be merged into the <code>x.x.x-y</code> branch. Once a new set of features is implemented and the version is ready for release we&#39;ll merge it with <code>master</code>. </p>
+				<p>In the meanwhile, I personally work on the <code>dev</code> branch with my own features. There is a chance that your code get changed on the <code>dev</code> branch after it has been merged for optimizations. So don&#39;t be scared if you see me changing your code :)</p>
 				<a href="#done-reading-check-out-this-joke" id="done-reading-check-out-this-joke" style="color: inherit; text-decoration: none;">
 					<h2>Done reading? Check out this joke!</h2>
 				</a>
@@ -204,9 +205,6 @@
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/modules_default_chain.html">modules/default-<wbr>chain</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/modules_file_manager.html">modules/file-<wbr>manager</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/modules_parser.html">modules/parser</a>
