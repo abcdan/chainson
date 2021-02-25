@@ -19,6 +19,7 @@ jobs:
         restore-keys: |
           ${{ runner.OS }}-node-
           ${{ runner.OS }}-
+    - run: npm i
     - run: npm run lint
     - run: npm run build
     - run: npm run test
