@@ -9,7 +9,7 @@
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
-    "docs": "npx typedoc src/",
+    "docs": "npx typedoc src/index.ts",
     "fix": "npm run format && npm run lint && npm run build && npm run test",
     "prepare-for-release": "npm run fix && npm run docs"
   },
@@ -37,7 +37,7 @@
   "bugs": {
     "url": "https://github.com/abcdan/chainson/issues"
   },
-  "homepage": "https://github.com/abcdan/chainson#readme",
+  "homepage": "https://chainson.js.org",
   "devDependencies": {
     "@types/jest": "^26.0.20",
     "@types/node": "^14.14.31",
