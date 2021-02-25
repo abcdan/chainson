@@ -67,7 +67,6 @@ class Chainson {
     return this.chain.chain;
   }
 
-
   /**
    * Update a value in the chain
    * @param key key
@@ -92,7 +91,6 @@ class Chainson {
     this.store();
   }
 
-
   /**
    * Add the updated chain to the queue to be made persistan
    */
@@ -107,7 +105,6 @@ class Chainson {
   public forceStore() {
     if (!this.chain) throw new NoChainLoaded();
     this.chainQueue.add(this.chain);
-
   }
 }
 
