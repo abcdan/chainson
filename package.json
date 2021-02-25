@@ -11,7 +11,7 @@
     "lint": "tslint -p tsconfig.json",
     "docs": "npx typedoc src/index.ts",
     "fix": "npm run format && npm run lint && npm run build && npm run test",
-    "prepare-for-release": "npm run fix && npm run docs"
+    "prepare-for-release": "npm run fix"
   },
   "jest": {
     "preset": "ts-jest",
