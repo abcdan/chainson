@@ -10,7 +10,7 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
     "docs": "npx typedoc src/",
-    "fix": "npm run format && npm run lint && npm run build",
+    "fix": "npm run format && npm run lint && npm run build && npm run test",
     "prepare-for-release": "npm run fix && npm run docs"
   },
   "jest": {
