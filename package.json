@@ -17,7 +17,7 @@
     "preset": "ts-jest",
     "testEnvironment": "node",
     "setupFilesAfterEnv": [
-      "./tests/setup.ts"
+      "./tests/setup.js"
     ]
   },
   "repository": {
