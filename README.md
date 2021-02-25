@@ -75,7 +75,7 @@ _If something is [x], it doesn't mean that it's working properly. It's just mean
 ## Documentation
 There are a few places to find documentation for the application:
 1. In the codebase itself there _should_ be comments on almost every method.
-2. An online version based on these comments can be found on [this](https://abcdan.github.io/chainson/docs/index.html) page.
+2. An online version based on these comments can be found on [chainson.js.org](https://chainson.js.org).
 
 ## How to release a new version or contribute.
 This part of the documention is mainly for myself at the moment (or people who might have release permissions in the future).
