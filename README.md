@@ -8,11 +8,7 @@
 🪐 chainson is JSON file database with zero dependencies.
 
 **Please read the following before using:**
-```
-This library is still heavily in development. The API rapidly changes and methods might not work when you pull the latest version again. 
-
-As long as it's in the `0.x.x-a` (alpha) it's not recommended to use this library for production purposes.  
-```
+This library is still heavily in development. The API rapidly changes and methods might not work when you pull the latest version again. As long as it's in the `0.x.x-a` (alpha) it's not recommended to use this library for production purposes where you are not gonna update the library every release. I'm trying to keep the API as close to the last version as possible but I might introduce breaking changes. I'll aim to post the breaking changes in the pull request when I release a new version.
 
 Now we got that out of the way, let's start!
 
