@@ -1,6 +1,6 @@
 {
   "name": "chainson",
-  "version": "0.0.9-a",
+  "version": "0.0.10-a",
   "description": "A JSON file-based database with a queuing system",
   "main": "index.js",
   "types": "main.d.ts",
