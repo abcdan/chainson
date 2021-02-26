@@ -43,6 +43,7 @@ function jsonToMap(chain: object): Map<string, object> {
 export function storeToDisk(chainLocation: string, chainfile: Chainfile): Promise<boolean> {
   const tempChain = Object.assign({}, chainfile) as any;
   tempChain.chain = mapToObject(chainfile.chain);
+  tempChain.updatedAt = new Date();
   const chainJson = JSON.stringify(tempChain);
   return new Promise((resolve, reject) => {
     fs.writeFile(chainLocation, chainJson, (err) => {
