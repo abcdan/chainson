@@ -33,7 +33,7 @@ class Chainson {
    * @param key key
    * @param value data
    */
-  public add(key: any, value: any) {
+  public add(key: string, value: any) {
     if (!this.chain) throw new NoChainLoaded();
     if (this.contains(key)) throw new LinkAlreadyExists(key);
     this.chain.chain.set(key, value);
