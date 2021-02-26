@@ -16,12 +16,12 @@ Now we got that out of the way, let's start!
 
 ## Installing
 It's pretty easy cause we're on NPM! Simply run the following command to install the library as a dependency. We **do not** recommend installing it globally to ensure you use the right version in your projects.
-### NPM - Node Package Manager
+### [NPM](https://www.npmjs.com/package/chainson) - Node Package Manager
 ```cli
 npm i chainson
 ```
 
-### Yarn 
+### [Yarn](https://yarnpkg.com/package/chainson)  - Package Manager
 ```
 yarn add chainson
 ```
