@@ -39,13 +39,15 @@ Kinda, yes! But it'll be able to do much more than just storing and retrieving d
 - It's **easy to use**. Everything you need is already included by default with Node.js.
 - It's completely dependency free.
 - It's small!
+- You can rapidly store and retrieve data without having to worry about SQL.
+- It's literally as easy as using a Map, it uses a Map for storing in memory and it's gonna be fully compliant with the Map methods on the future.
+- It got typings, duh, it's built with Typescript!
 
 ## Logic
 When the database is "started", it loads the chainfile into memory. Every change to the chainfile will be saved to a json file. 
 
 ## Roadmap
 **Moved**! I'm gonna keep updating this README until all of the tasks here are done. But if you want to see new tasks or an overview of what is being worked on head over to our Github Projects board with the Tasks over [here](https://github.com/abcdan/chainson/projects/1)
-
 
 Here follows a list of things that still need to be implemented:
 - [x] Check if chainfile already exists
