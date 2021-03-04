@@ -35,7 +35,7 @@ class Chainson {
    */
   public add(key: string, value: any) {
     if (!this.chain) throw new NoChainLoaded();
-    if (this.contains(key)) throw new LinkAlreadyExists(key);
+    if (this.has(key)) throw new LinkAlreadyExists(key);
     this.chain.chain.set(key, value);
     this.store();
   }
@@ -46,7 +46,7 @@ class Chainson {
    */
   public get(key: string): any {
     if (!this.chain) throw new NoChainLoaded();
-    if (!this.contains(key)) throw new NoLinkFound(key);
+    if (!this.has(key)) throw new NoLinkFound(key);
     return this.chain.chain.get(key);
   }
 
@@ -54,7 +54,7 @@ class Chainson {
    * Check if the chain contains a certain key
    * @param key key
    */
-  public contains(key: string): boolean {
+  public has(key: string): boolean {
     if (!this.chain) throw new NoChainLoaded();
     return this.chain.chain.has(key);
   }
@@ -72,9 +72,20 @@ class Chainson {
    * @param key key
    * @param value value
    */
+  public set(key: any, value: any) {
+    if (!this.chain) throw new NoChainLoaded();
+    this.chain.chain.set(key, value);
+    this.store();
+  }
+
+  /**
+   * Update item in the chain, only if it exists
+   * @param key key
+   * @param value value
+   */
   public update(key: any, value: any) {
     if (!this.chain) throw new NoChainLoaded();
-    if (!this.contains(key)) throw new NoLinkFound(key);
+    if (!this.has(key)) throw new NoLinkFound(key);
     this.chain.chain.set(key, value);
     this.store();
   }
@@ -82,11 +93,10 @@ class Chainson {
   /**
    * Remove a value from the chain
    * @param key key
-   * @param value value
    */
-  public remove(key: any, value: any) {
+  public delete(key: any) {
     if (!this.chain) throw new NoChainLoaded();
-    if (!this.contains(key)) throw new NoLinkFound(key);
+    if (!this.has(key)) throw new NoLinkFound(key);
     this.chain.chain.delete(key);
     this.store();
   }
@@ -105,6 +115,16 @@ class Chainson {
   public forceStore() {
     if (!this.chain) throw new NoChainLoaded();
     this.chainQueue.add(this.chain);
+  }
+
+  /*
+    Aliasses
+  */
+  public contains(key: any) {
+    return this.has(key);
+  }
+  public remove(key: any) {
+    return this.delete(key);
   }
 }
 

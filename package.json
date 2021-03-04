@@ -1,6 +1,6 @@
 {
   "name": "chainson",
-  "version": "0.0.11-a",
+  "version": "0.0.12-a",
   "description": "🪐 chainson is JSON file database with zero dependencies.",
   "main": "index.js",
   "types": "main.d.ts",
