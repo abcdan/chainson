@@ -15,6 +15,35 @@ This library is still in alpha. A lot of things might change internally and to t
 
 Now we got that out of the way, let's start!
 
+## Example
+Let me show you how easy to use it is! More examples will be in the `examples` folders in the (near) future!
+```js
+// Import chainson
+const Chainson = require('chainson')
+
+// Define the chain, this will use the default variables
+const chain = new Chainson()
+
+// Print the full chain before doing anything!
+console.log(chain.full())
+
+// Add data to the chain, it will automatically store!
+chain.add('hello', 'world')
+
+// Retrieve the data from the chain!
+const world = chain.get('hello')
+
+// Check if the chain has the "hello" key!
+const contains = chain.contains('hello')
+console.log(contains)
+
+// Print the results!
+console.log(`Hello, ${world}!`)
+
+// Print the full object at the end!
+console.log(chain.full())
+```
+
 ## Installing
 It's pretty easy cause we're on NPM! Simply run the following command to install the library as a dependency. We **do not** recommend installing it globally to ensure you use the right version in your projects.
 ### [NPM](https://www.npmjs.com/package/chainson) - Node Package Manager
