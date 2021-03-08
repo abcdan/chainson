@@ -8,7 +8,7 @@
 <a href="https://snyk.io/test/github/abcdan/chainson?targetFile=package.json"><img src="https://snyk.io/test/github/abcdan/chainson/badge.svg?targetFile=package.json" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/abcdan/chainson?targetFile=package.json" style="max-width:100%;"></a>
 [![Ecologi (Trees)](https://img.shields.io/ecologi/trees/lngzl)](https://ecologi.com/lngzl?r=6005cc57f70194001deaedfa)
 
-🪐 chainson is JSON file database with zero dependencies.
+🪐 chainson is a persistent Map-type database with zero dependencies for Node.js
 
 **Please read the following before using:**
 This library is still in alpha. A lot of things might change internally and to the outside of the library. I aim to keep the API the same but I'm confident some things are gonna change. It's recommended to install it and lock it on one version to avoid having it automatically grab a newer version (that could theoretically break your application).
