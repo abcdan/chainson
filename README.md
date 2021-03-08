@@ -58,6 +58,9 @@ Kinda, yes! But it'll be able to do much more than just storing and retrieving d
 ## Logic
 When the database is "started", it loads the chainfile into memory. Every change to the chainfile will be saved to a json file. 
 
+## What does Chainson mean?
+It's simple! The data is stored in a Map which is kinda like a Chain and when the data is made persistent on the drive of the system it's running on it stores it as `JSON` so that's where the "son" part comes from.
+
 ## Roadmap
 **Moved**! I'm gonna keep updating this README until all of the tasks here are done. But if you want to see new tasks or an overview of what is being worked on head over to our Github Projects board with the Tasks over [here](https://github.com/abcdan/chainson/projects/1)
 
