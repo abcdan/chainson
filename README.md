@@ -61,6 +61,17 @@ When the database is "started", it loads the chainfile into memory. Every change
 ## What does Chainson mean?
 It's simple! The data is stored in a Map which is kinda like a Chain and when the data is made persistent on the drive of the system it's running on it stores it as `JSON` so that's where the "son" part comes from.
 
+## What is supported?
+- [x] Strings
+- [x] Numbers
+- [x] Booleans
+- [x] Arrays
+- [x] Objects
+- [x] Floats
+- [x] null
+- [x] undefined, _theoretically supported. It just removes it from the chain._
+- [ ] Maps, _which is funny because it uses maps to properly function. I might add a function later to put a Map inside of a chain_
+
 ## Roadmap
 **Moved**! I'm gonna keep updating this README until all of the tasks here are done. But if you want to see new tasks or an overview of what is being worked on head over to our Github Projects board with the Tasks over [here](https://github.com/abcdan/chainson/projects/1)
 
@@ -77,6 +88,7 @@ Here follows a list of things that still need to be implemented:
 - [x] Check if exists in chain
 - [x] Remove from chain
 - [x] Update in chain
+- [x] Convert the data from the saved chain file back to original data structure
 - [ ] Automatic repairing of a chainfile
 - [ ] Automatic restoring of an older chainfile
 - [ ] Automatic merging of older and newer chainfile (if new one not fully functional)
