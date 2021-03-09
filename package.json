@@ -1,9 +1,9 @@
 {
   "name": "chainson",
-  "version": "0.0.12-a",
+  "version": "0.0.13-a",
   "description": "🪐 chainson is JSON file database with zero dependencies.",
-  "main": "index.js",
-  "types": "main.d.ts",
+  "main": "lib/index.js",
+  "types": "lib/main.d.ts",
   "scripts": {
     "test": "jest ./tests",
     "build": "tsc",
@@ -48,6 +48,7 @@
     "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0",
     "typedoc": "^0.20.28",
-    "typescript": "^4.1.5"
-  }
+    "typescript": "^4.2.3"
+  },
+  "dependencies": {}
 }
