@@ -126,6 +126,20 @@
 					<h2>What does Chainson mean?</h2>
 				</a>
 				<p>It&#39;s simple! The data is stored in a Map which is kinda like a Chain and when the data is made persistent on the drive of the system it&#39;s running on it stores it as <code>JSON</code> so that&#39;s where the &quot;son&quot; part comes from.</p>
+				<a href="#what-is-supported" id="what-is-supported" style="color: inherit; text-decoration: none;">
+					<h2>What is supported?</h2>
+				</a>
+				<ul>
+					<li><input checked="" disabled="" type="checkbox"> Strings</li>
+					<li><input checked="" disabled="" type="checkbox"> Numbers</li>
+					<li><input checked="" disabled="" type="checkbox"> Booleans</li>
+					<li><input checked="" disabled="" type="checkbox"> Arrays</li>
+					<li><input checked="" disabled="" type="checkbox"> Objects</li>
+					<li><input checked="" disabled="" type="checkbox"> Floats</li>
+					<li><input checked="" disabled="" type="checkbox"> null</li>
+					<li><input checked="" disabled="" type="checkbox"> undefined, <em>theoretically supported. It just removes it from the chain.</em></li>
+					<li><input disabled="" type="checkbox"> Maps, <em>which is funny because it uses maps to properly function. I might add a function later to put a Map inside of a chain</em></li>
+				</ul>
 				<a href="#roadmap" id="roadmap" style="color: inherit; text-decoration: none;">
 					<h2>Roadmap</h2>
 				</a>
@@ -144,6 +158,7 @@
 					<li><input checked="" disabled="" type="checkbox"> Check if exists in chain</li>
 					<li><input checked="" disabled="" type="checkbox"> Remove from chain</li>
 					<li><input checked="" disabled="" type="checkbox"> Update in chain</li>
+					<li><input checked="" disabled="" type="checkbox"> Convert the data from the saved chain file back to original data structure</li>
 					<li><input disabled="" type="checkbox"> Automatic repairing of a chainfile</li>
 					<li><input disabled="" type="checkbox"> Automatic restoring of an older chainfile</li>
 					<li><input disabled="" type="checkbox"> Automatic merging of older and newer chainfile (if new one not fully functional)</li>
