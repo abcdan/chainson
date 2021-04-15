@@ -124,6 +124,7 @@ In the meanwhile, I personally work on the `dev` branch with my own features. Th
 
 ## Done reading? Check out this joke!
 ![Jokes Card](https://readme-jokes.vercel.app/api)
+_Refresh for a new one!_
 
 ## License
 The library is released under an Apache 2.0 License.
