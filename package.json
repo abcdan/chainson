@@ -40,7 +40,7 @@
   "homepage": "https://chainson.js.org",
   "devDependencies": {
     "@types/jest": "^26.0.20",
-    "@types/node": "^15.0.1",
+    "@types/node": "^16.0.0",
     "jest": "^26.6.3",
     "prettier": "^2.2.1",
     "ts-jest": "^26.5.2",
